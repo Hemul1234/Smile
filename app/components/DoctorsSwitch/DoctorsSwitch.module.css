@@ -1,0 +1,23 @@
+/*выбор специализации врача*/
+
+.doctors-nav {
+    background-color: #E1E7FF;
+    padding: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 30px;
+    font: clamp(15px, calc(15px + 5 * var(--adaptive)), 20px)/1 "Involve-Regular";
+}
+
+.doctor-spec {
+    padding: 6px 8px;
+    cursor: pointer;
+}
+
+.doctor-spec.active{
+    padding: 6px 8px;
+    background-color: #3556D7;
+    color: #FFFFFF;
+    border-radius: 999px;
+}

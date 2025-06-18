@@ -1,0 +1,100 @@
+.make-an-appointment {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, calc(20px + 4 * var(--adaptive)), 24px);
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, calc(20px + 4 * var(--adaptive)), 24px);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, calc(20px + 4 * var(--adaptive)), 24px);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, calc(10px + 6 * var(--adaptive)), 16px);
+}
+
+.label {
+    width: 100%;
+    font: clamp(18px, calc(18px + 2 * var(--adaptive)), 20px) / 2 "Involve-Medium";
+}
+
+.input {
+    width: 100%;
+    height: clamp(44px, calc(44px + 14 * var(--adaptive)), 58px);
+    padding: clamp(10px, calc(10px + 3 * var(--adaptive)), 13px) clamp(22px, calc(22px + 5 * var(--adaptive)), 27px);
+    font: clamp(18px, calc(18px + 8 * var(--adaptive)), 24px) / 1 "Involve-Medium";
+    border-radius: 999px;
+    background: var(--card);
+    cursor: pointer;
+}
+
+.input::placeholder {
+    color: var(--black);
+    opacity: 0.3;
+}
+
+.checkbox-appoint {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(100vw*8/390);
+  }
+  
+.checkbox-check {
+    width: 30px;
+    height: 30px;
+    appearance: none;
+    border: 2px solid #3556D7;
+    border-radius: 8px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  
+.checkbox-check::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: -2px;
+    top: -2px;
+    background: url("/images/icons/check.svg") no-repeat center;
+    transition: 500ms;
+  }
+  
+.checkbox-check:checked::after {
+    background-color: #3556D7;
+    border-radius: 8px;
+  }
+  
+.checkbox-label {
+    font-size: clamp(16px, calc(16px + 4 * var(--adaptive)), 20px);
+    color: var(--black);
+  }
+
+@media screen and (min-width: 768px) {
+    .make-an-appointment {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .make-an-appointment {
+        flex-direction: row;
+    }
+
+    .input-group {
+        flex-direction: row;
+    }
+
+    .sign-up-button {
+        width: 50%;
+    }
+}

@@ -1,0 +1,47 @@
+/*блок врачи*/
+
+  .slide {
+    display: flex;
+    justify-content: space-between;
+    height: clamp(200px, calc(200px + 42 * var(--adaptive)), 242px);
+    padding-left: 32px;
+    border-radius: clamp(30px, 30px + 10 * var(--adaptive), 40px);
+    background-color: #E1E7FF;
+    overflow: hidden;
+  }
+  
+  .slide-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px 0;
+  }
+  
+  .slide-text-name {
+    font-family: "Involve-Bold";
+  }
+  
+  .slide-text-position {
+    font: 0.875em/1 "Involve-Medium";
+    margin-top: calc(100vw*8/390);
+  }
+  
+  .more-details {
+    height: clamp(35px, 35px + 6 * var(--adaptive), 41px);
+    width: clamp(154px, 154px + 11 * var(--adaptive), 166px);
+    border-radius: calc(100vw*20/390);
+  }
+  
+  .women-doc {
+    height: clamp(190px, calc(190px + 10 * var(--adaptive)), 200px);
+    width: auto;
+    align-self: end;
+  }
+
+/*блок врачи десктоп*/
+
+.button-all-doctors {
+  height: 59px;
+  width: 220px;
+  align-self: center;
+}

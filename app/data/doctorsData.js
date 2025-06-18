@@ -1,0 +1,42 @@
+export const doctors = [
+    {
+        id: 0,
+        name: 'Мария Сергеевна Петрова',
+        photo: '/images/doctors/Petrova.png',
+        category: 'microscopist',
+        specialization: 'Микроскопист',
+    },
+    {
+        id: 1,
+        name: 'Алексей Иванович Смирнов',
+        photo: '/images/doctors/Smirnov.png',
+        category: 'terapy',
+        specialization: 'Терапевт',
+        education: '2011 г. Иркутский государственный медицинский университет (стоматология)',
+        advanced: ['2018 Иркутский государственный медицинский университет (стоматология терапевтическая)', '2020 Иркутский государственный медицинский университет (стоматология детская)'],
+        experience: '15 лет',
+        cost: 500,
+        buttonText: 'Подробнее',
+    },
+    {
+        id: 2,
+        name: 'Дмитрий Андреевич Кузнецов',
+        photo: '/images/doctors/Kusnetsov.png',
+        category: 'surgeon',
+        specialization: 'Хирург',
+    },
+    {
+        id: 3,
+        name: 'Ольга Викторовна Соколова',
+        photo: '/images/doctors/Sokolova.png',
+        category: 'orthodontist',
+        specialization: 'Ортодонт',
+    },
+    {
+        id: 4,
+        name: 'Николай Павлович Васильев',
+        photo: '/images/doctors/Vasiliev.png',
+        category: 'orthopedist',
+        specialization: 'Ортопед',
+    },
+]

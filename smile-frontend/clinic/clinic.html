@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="clinic.css">
+</head>
+<body>
+    <header>
+        <a href="#">
+            <img className="logo" src="../public/images/logo.png" alt="logo">
+        </a>
+        <a href="#">
+            <img className="burger-menu" src="../public/images/icons/burger.png" alt="logo">
+        </a>
+    </header>
+    <main>
+        <h2 className="title">
+            О клинике
+        </h2>
+        <div className="doctors-breadcrumbs">
+            <a href="" className="doctors-breadcrumbs-item">Главная</a>
+            <div className="doctors-breadcrumbs-separator"></div>
+            <a href="" className="doctors-breadcrumbs-item">О клинике</a>
+        </div>
+        <section className="about-home">
+            <div className="about-img"></div>
+            <div className="about-text">
+                <p className="about-text-item">
+                    Стоматологи в один голос рекомендуют проводить профилактический осмотр полости рта минимум раз в полгода. И такой срок установлен не случайно.
+                </p>
+                <p className="about-text-item">
+                    Дело в том, что большинство заболеваний зубов и десен начинают свои клинические проявления по истечению шести месяцев после «старта». Именно в этот момент врач может диагностировать развивающийся кариес или гингивит и приступить к лечению, пока болезнь еще не запущена.
+                </p>
+                <p className="about-text-item">
+                    Если вы откладываете поход к стоматологу на год или более, то подвергаете себя большому риску. Вероятно, следующий ваш визит к врачу будет экстренным - из-за сильных болей, отеков и других неприятных ощущений.
+                </p>
+                <p className="about-text-item">
+                    Чаще всего к нам обращаются пациенты, которые даже не подозревают, что у них есть кариес в начальной стадии. Если удается вовремя обнаружить заболевание, то лечение может ограничиться лишь использованием специальных паст.
+                </p>
+            </div>
+        </section>
+        <section className="advantages">
+            <h2 className="title">
+                Преимущества
+            </h2>
+            <div className="advantages-item">
+                <img src="../public/images/icons/advantages/Experienced-doctors.svg" alt="" className="advantages-img">
+                <p className="advantages-title">
+                    Опытные врачи
+                </p>
+                <p className="advantages-text">
+                    Стоматологи с многолетним стажем и высокой квалификацией, постоянно совершенствующие свои навыки.
+                </p>
+            </div>
+            <div className="advantages-item">
+                <img src="../public/images/icons/advantages/Modern-equipment.svg" alt="" className="advantages-img">
+                <p className="advantages-title">
+                    Современное оборудование
+                </p>
+                <p className="advantages-text">
+                    Новое оборудование и высококачественные материалы обеспечивают точную диагностику.
+                </p>
+            </div>
+            <div className="advantages-item">
+                <img src="../public/images/icons/advantages/Painless-treatment.svg" alt="" className="advantages-img">
+                <p className="advantages-title">
+                    Безболезненное лечение
+                </p>
+                <p className="advantages-text">
+                    Современные анестетики позволяют проводить стоматологические процедуры без боли.
+                </p>
+            </div>
+            <div className="advantages-item">
+                <img src="../public/images/icons/advantages/Individual-approach.svg" alt="" className="advantages-img">
+                <p className="advantages-title">
+                    Индивидуальный подход
+                </p>
+                <p className="advantages-text">
+                    Индивидуальный план лечения для каждого пациента с учетом его потребностей и пожеланий.
+                </p>
+            </div>
+            <div className="advantages-item">
+                <img src="../public/images/icons/advantages/Competitive-prices.svg" alt="" className="advantages-img">
+                <p className="advantages-title">
+                    Конкурентные цены
+                </p>
+                <p className="advantages-text">
+                    Доступные цены на наши услуги, чтобы сделать их доступными для широкого круга пациентов.
+                </p>
+            </div>
+            <div className="advantages-item">
+                <img src="../public/images/icons/advantages/Quality-assurance.svg" alt="" className="advantages-img">
+                <p className="advantages-title">
+                    Гарантия качества
+                </p>
+                <p className="advantages-text">
+                    Гарантия на все виды наших услуг, что дает пациентам уверенность в качестве лечения.
+                </p>
+            </div>
+        </section>
+        <section className="sign-up-bunner">
+            <div className="sign-up-info">
+                <div className="sign-up-name">
+                    Запишитесь на прием в нашу клинику
+                </div>
+                <div className="sign-up-text">
+                    Оставьте свои контактные данные и наш администратор свяжется с вами для подтверждения. Мы готовы позаботиться о вашем здоровье и комфорте.
+                </div>
+            </div>
+            <form id="sign-up-form" action="" method="get" className="sign-up-form">
+                <input className="input-sign-up-form" type="text" name="text" placeholder="Ваше имя">
+                <input className="input-sign-up-form" type="tel" name="tel" placeholder="Номер телефона">
+                <button className="input-sign-up-form-btn" type="submit">Записаться на прием</button>
+                <p className="sign-up-form-text">
+                    Заполняя форму, вы даете согласие на обработку ваших 
+                    <a className="personal-data" id="personal-data" href="#">
+                        персональных данных.
+                    </a>
+                </p>
+            </form>
+        </section>
+        <section className="reviews">
+            <h2 className="title">Отзывы</h2>
+            <div className="reviews-slider">
+                <div className="reviews-slide">
+                    
+                </div>
+                <div className="slide-marker">
+                    <button className="button-radio"></button>
+                    <button className="button-radio"></button>
+                    <button className="button-radio"></button>
+                    <button className="button-radio-active"></button>
+                    <button className="button-radio"></button>
+                    <button className="button-radio"></button>
+                    <button className="button-radio"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="#">
+            <img className="logo-footer" src="../public/images/logo.png" alt="logo">
+        </a>
+        <div className="footer-nav-block">
+            <p className="footer-nav-block-name">
+                Быстрые ссылки
+            </p>
+            <div className="footer-nav-block-text">
+                <p className="footer-nav-block-item">
+                    Услуги
+                </p>
+                <p className="footer-nav-block-item">
+                    Врачи
+                </p>
+                <p className="footer-nav-block-item">
+                    О клинике
+                </p>
+                <p className="footer-nav-block-item">
+                    Контакты
+                </p>
+            </div>
+        </div>
+        <div className="footer-nav-block">
+            <p className="footer-nav-block-name">
+                Услуги
+            </p>
+            <div className="footer-nav-block-text">
+                <p className="footer-nav-block-item">
+                    Терапия
+                </p>
+                <p className="footer-nav-block-item">
+                    Протезирование зубов
+                </p>
+                <p className="footer-nav-block-item">
+                    Хирургия
+                </p>
+                <p className="footer-nav-block-item">
+                    Эстетика
+                </p>
+            </div>
+        </div>
+        <div className="footer-nav-block">
+            <p className="footer-nav-block-name">
+                О клинике
+            </p>
+            <div className="footer-nav-block-text">
+                <p className="footer-nav-block-item-bottom">
+                    Наши преимущества
+                </p>
+                <p className="footer-nav-block-item-bottom">
+                    Вакансии
+                </p>
+                <p className="footer-nav-block-item-bottom">
+                    Юридическая информация
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

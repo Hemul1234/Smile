@@ -1,0 +1,32 @@
+/*блок отзывы*/
+
+  .reviews-slide {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 100%;
+    border-radius: clamp(30px, calc(30px + 10 * var(--adaptive)), 40px);
+    background-color: #E1E7FF;
+    padding: clamp(18px, calc(18px + 18 * var(--adaptive)), 36px);
+    gap: clamp(18px, calc(18px + 6 * var(--adaptive)), 24px);
+  }
+  
+  .reviews-slide-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: url(/images/review.png) center/cover;
+    overflow: hidden;
+  }
+  
+  .reviews-slide-text-name {
+    font: 1.25em/1.5 "Involve-SemiBold";
+  }
+  
+  .reviews-slide-text-service {
+    font: 0.875em/1.5 "Involve-Regular";
+  }
+  
+  .reviews-slide-text {
+    font: 1em/1.25 "Involve-Regular";
+  }

@@ -1,0 +1,309 @@
+h1 {
+    font: 1.6em/1.37 "Involve-Medium";
+    color: #3659E1;
+}
+
+h2 {
+    font: 1.5rem/1.37 "Involve-Bold";
+    text-transform: uppercase;
+    color: #3659E1;
+}
+
+h3 {
+    font: 1.25em/1.37 "Involve-Medium";
+    color: #3659E1;
+}
+
+button {
+    background-color: #3556D7;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    font-family: "Involve-Regular";
+    color: #0A031A;
+}
+
+header {
+    height: calc(100vw*65/390);
+    background-color: #E1E7FF;
+    padding: calc(100vw*16/390);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    font-size: 16px;
+    flex: 1;
+    padding: calc(100vw*16/390);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/*врачи заголовки*/
+
+.title {
+    
+}
+
+.doctors-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.doctors-breadcrumbs-item {
+    font: 1em/1 "Involve-Medium";
+    text-decoration: none;
+    color: #0A031A;
+}
+
+.doctors-breadcrumbs-separator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #3556D7;
+}
+
+/*выбор специализации врача*/
+
+.doctors-nav {
+    background-color: #E1E7FF;
+    padding: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    border-radius: 30px;
+    font: 1em/1 "Involve-Regular";
+}
+
+.doctor-spec-active{
+    padding: 6px 10px;
+    background-color: #3556D7;
+    color: #FFFFFF;
+    border-radius: 999px;
+}
+
+.doctor-spec {
+    padding: 6px 10px;
+}
+
+/*врачи списком*/
+
+.doctors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.doctors-list-item1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 358px;
+    background: #E1E7FF url(../public/images/doctors/Smirnov.png) no-repeat 120% 110%/auto 84%;
+    border-radius: 40px;
+    padding: 32px;
+}
+.doctors-list-item2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 358px;
+    background: #E1E7FF url(../public/images/doctors/Petrova.png) no-repeat 120% 110%/auto 84%;
+    border-radius: 40px;
+    padding: 32px;
+}
+.doctors-list-item3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 358px;
+    background: #E1E7FF url(../public/images/doctors/Vasiliev.png) no-repeat 120% 110%/auto 84%;
+    border-radius: 40px;
+    padding: 32px;
+}
+.doctors-list-item4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 358px;
+    background: #E1E7FF url(../public/images/doctors/Kusnetsov.png) no-repeat 120% 110%/auto 84%;
+    border-radius: 40px;
+    padding: 32px;
+}
+.doctors-list-item5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 358px;
+    background: #E1E7FF url(../public/images/doctors/Sokolova.png) no-repeat 120% 110%/auto 84%;
+    border-radius: 40px;
+    padding: 32px;
+}
+.doctors-list-item6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 358px;
+    background: #E1E7FF url(../public/images/doctors/Morozova.png) no-repeat 120% 110%/auto 84%;
+    border-radius: 40px;
+    padding: 32px;
+}
+.doctors-list-item7 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 358px;
+    background: #E1E7FF url(../public/images/doctors/Fedorov.png) no-repeat 120% 110%/auto 84%;
+    border-radius: 40px;
+    padding: 32px;
+}
+.doctors-list-item8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 358px;
+    background: #E1E7FF url(../public/images/doctors/Lebedeva.png) no-repeat 120% 110%/auto 84%;
+    border-radius: 40px;
+    padding: 32px;
+}
+.doctors-list-item9 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 358px;
+    background: #E1E7FF url(../public/images/doctors/Tihonov.png) no-repeat 120% 110%/auto 84%;
+    border-radius: 40px;
+    padding: 32px;
+}
+
+.doctors-list-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.doc-name {
+    width: 70%;
+    font: 1.25em/1.4 "Involve-Bold";
+}
+
+.doc-position {
+    font-family: "Involve-Medium";
+}
+
+.sign-up {
+    height: calc(100vw*48/390);
+    width: 100%;
+    border-radius: calc(100vw*48/390);
+    background-color: #3556D7;
+    font-family: "Involve-Regular";
+    font-size: 18px;
+    color: #F3F3F3;
+}
+
+/*footer*/
+
+footer {
+    margin-top: calc(100vw*40/390);
+    height: calc(100vw*400/390);
+    background-color: #EDF0FC;
+    color: #3556D7;
+    display: flex;
+    flex-direction: column;
+    gap: calc(100vw*20/390);
+}
+
+.logo-footer {
+    margin-top: calc(100vw*12/390);
+}
+
+.footer-nav-block {
+    display: flex;
+    flex-direction: column;
+    gap: calc(100vw*14/390);
+}
+
+.footer-nav-block-name {
+    font: 1.125em/1 "Involve-SemiBold";
+}
+
+.footer-nav-block-text {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(100vw*14/390) 0;
+}
+
+.footer-nav-block-item {
+    width: 50%;
+    font: 1em/1 "Involve-Medium";
+}
+
+.footer-nav-block-item-bottom {
+    width: 100%;
+    font: 1em/1 "Involve-Medium";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: "Involve-Regular";
+    src:
+        url("../public/fonts/Involve/OTF/Involve-Regular.otf"),
+        url("../public/fonts/Involve/TTF/Involve-Regular.ttf");
+        font-style: normal; 
+        font-weight: normal;
+  }
+
+@font-face {
+    font-family: "Involve-Medium";
+    src:
+        url("../public/fonts/Involve/OTF/Involve-Medium.otf"),
+        url("../public/fonts/Involve/TTF/Involve-Medium.ttf");
+        font-style: normal; 
+        font-weight: normal;
+  }
+
+@font-face {
+    font-family: "Involve-SemiBold";
+    src:
+        url("../public/fonts/Involve/OTF/Involve-SemiBold.otf"),
+        url("../public/fonts/Involve/TTF/Involve-SemiBold.ttf");
+        font-style: normal; 
+        font-weight: normal;
+}
+
+@font-face {
+    font-family: "Involve-Bold";
+    src:
+        url("../public/fonts/Involve/OTF/Involve-Bold.otf"),
+        url("../public/fonts/Involve/TTF/Involve-Bold.ttf");
+        font-style: normal; 
+        font-weight: normal;
+  }

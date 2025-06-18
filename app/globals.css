@@ -1,0 +1,218 @@
+/* Reset and base styles  */
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Links */
+
+a, a:link, a:visited, a:hover  {
+    text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+	display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+	font-weight: inherit;
+}
+
+ul, ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+img, svg {
+	max-width: 100%;
+	height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select {
+	font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	display: block;
+}
+
+
+:root {
+  --adaptive: calc((100vw - 390px) / (1440 - 390));
+  --blue: #3556D7;
+  --white: #FFFFFF;
+  --black: #0A031A;
+  --violet: #E1E7FF;
+  --card: #EDF0FC;
+}
+
+h1 {
+  font: clamp(26px, calc(26px + 22 * var(--adaptive)), 48px)/1.37 "Involve-Medium";
+  color: var(--blue);
+}
+
+h2 {
+  font: clamp(24px, calc(24px + 16 * var(--adaptive)), 40px)/1.37 "Involve-Bold";
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+h3 {
+  font: clamp(20px, calc(20px + 20 * var(--adaptive)), 40px)/1.37 "Involve-Medium";
+  color: var(--blue);
+}
+
+button {
+  height: clamp(45px, calc(45px + 14 * var(--adaptive)), 59px);
+  font: clamp(16px, calc(16px + 4 * var(--adaptive)), 20px) / 2 "Involve-Medium";
+  background-color: var(--blue);
+  color: var(--white);
+  text-align: center;
+  border-radius: 999px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Involve-Medium";
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 999px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Involve-Regular";
+  background-color: var(--white);
+  color: var(--black);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1440px;
+  font-size: 16px;
+  flex: 1;
+  padding: 0 clamp(16px, calc(16px + 64 * var(--adaptive)), 80px) clamp(20px, calc(20px + 20 * var(--adaptive)), 40px) clamp(16px, calc(16px + 64 * var(--adaptive)), 80px);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, calc(20px + 20 * var(--adaptive)), 40px);
+  margin: clamp(20px, calc(20px + 20 * ((100vw - 390px) / (1440 - 390))), 40px) 0;
+}
+
+.swiper-pagination-bullets {
+  position: static !important;
+  margin-top: clamp(12px, calc(12px + 8 * var(--adaptive)), 20px);
+}
+
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: #3556D780 !important;
+  opacity: 1 !important;
+  border-radius: 999px !important;
+  transition: width 0.3s, background-color 0.5s;
+}
+
+.swiper-pagination-bullet-active {
+  width: 30px !important;
+  height: 10px !important;
+  background-color: var(--blue) !important;
+}
+
+
+
+
+
+
+@font-face {
+  font-family: "Involve-Regular";
+  src:
+      url("/fonts/Involve/OTF/Involve-Regular.otf"),
+      url("/fonts/Involve/TTF/Involve-Regular.ttf");
+      font-style: normal; 
+      font-weight: normal;
+}
+
+@font-face {
+  font-family: "Involve-Medium";
+  src:
+      url("/fonts/Involve/OTF/Involve-Medium.otf"),
+      url("/fonts/Involve/TTF/Involve-Medium.ttf");
+      font-style: normal; 
+      font-weight: normal;
+}
+
+@font-face {
+  font-family: "Involve-SemiBold";
+  src:
+      url("/fonts/Involve/OTF/Involve-SemiBold.otf"),
+      url("/fonts/Involve/TTF/Involve-SemiBold.ttf");
+      font-style: normal; 
+      font-weight: normal;
+}
+
+@font-face {
+  font-family: "Involve-Bold";
+  src:
+      url("/fonts/Involve/OTF/Involve-Bold.otf"),
+      url("/fonts/Involve/TTF/Involve-Bold.ttf");
+      font-style: normal; 
+      font-weight: normal;
+}

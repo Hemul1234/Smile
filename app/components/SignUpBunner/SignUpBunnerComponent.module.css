@@ -1,0 +1,84 @@
+/*Блок записи*/
+
+.sign-up-bunner {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, calc(20px + 26 * var(--adaptive)), 46px);
+    width: 100%;
+    padding: clamp(18px, calc(18px + 28 * var(--adaptive)), 46px) clamp(18px, calc(18px + 36 * var(--adaptive)), 54px);
+    border-radius: clamp(40px, calc(40px + 20 * var(--adaptive)), 60px);
+    background-color: var(--violet);
+  }
+  
+  .sign-up-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(10px, calc(10px + 30 * var(--adaptive)), 40px);
+    text-align: center;
+  }
+  
+  .sign-up-name {
+    font: clamp(22px, calc(22px + 26 * var(--adaptive)), 48px)/1.25 "Involve-Bold";
+    color: var(--blue);
+  }
+  
+  .sign-up-text {
+    font: clamp(10px, calc(10px + 10 * var(--adaptive)), 20px)/1.5 "Involve-Regular";
+  }
+  
+  .sign-up-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(12px, calc(12px + 8 * var(--adaptive)), 20px);
+    height: 100%;
+    background-color: var(--white);
+    padding: clamp(24px, calc(24px + 22 * var(--adaptive)), 56px);
+    border-radius: 40px;
+  }
+  
+  .input-sign-up-form {
+    font-family: "Involve-Medium";
+    height: clamp(44px, calc(44px + 16 * var(--adaptive)), 60px);
+    background-color: #E1E7FF;
+    border-radius: calc(100vw*44/390);
+    padding-left: calc(100vw*20/390);
+  }
+  
+  .input-sign-up-form::placeholder {
+    color: #0A031A;
+  }
+  
+  .input-sign-up-form-btn {
+    font-family: "Involve-Medium";
+    height: clamp(44px, calc(44px + 16 * var(--adaptive)), 60px);
+    background-color: #3556D7;
+    color: #FFFFFF;
+    border-radius: calc(100vw*44/390);
+  }
+  
+  .sign-up-form-text {
+    font: clamp(11px, calc(11px + 5 * var(--adaptive)), 16px)/1.25 "Involve-Regular";
+    text-align: center;
+  }
+  
+  #personal-data {
+    text-decoration: underline;
+    color: #3556D7;
+  }
+
+@media screen and (min-width: 768px) {
+  .sign-up-bunner {
+    flex-direction: row;
+  }
+
+  .sign-up-info {
+    width: 50%;
+    text-align: start;
+  }
+
+  .sign-up-form {
+    width: 50%;
+  }
+}

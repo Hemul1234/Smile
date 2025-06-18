@@ -1,0 +1,82 @@
+/*Контакты*/
+
+.contacts-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: clamp(30px, calc(30px + 30 * var(--adaptive)), 60px);
+    overflow: hidden;
+  }
+
+  .map {
+    height: clamp(331px, calc(331px + 266 * var(--adaptive)), 597px);
+    background: url("/images/map.png") center / cover;
+  }
+  
+  .contacts-data {
+    background-color: #E1E7FF;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(16px, calc(16px + 47 * var(--adaptive)), 65px);
+    gap: clamp(20px, calc(20px + 24 * var(--adaptive)), 44px);
+  }
+  
+  .icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(8px, calc(8px + 10 * var(--adaptive)), 18px) 0;
+  }
+  
+  .icon {
+    display: flex;
+    width: 50%;
+    gap: 13px;
+  }
+  
+  .ic {
+    width: clamp(21px, calc(21px + 6 * var(--adaptive)), 27px);
+    height: fit-content;
+  }
+  
+  .ic-text {
+    font: clamp(13px, calc(13px + 11 * var(--adaptive)), 24px)/1 "Involve-Regular";
+  }
+  
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, calc(10px + 10 * var(--adaptive)), 20px);
+  }
+  
+  .details-name {
+    font: clamp(16px, calc(16px + 8 * var(--adaptive)), 24px)/1 "Involve-SemiBold";
+  }
+  
+  .details-text {
+    font: clamp(10px, calc(10px + 10 * var(--adaptive)), 20px)/1.5 "Involve-Medium";
+  }
+
+  @media screen and (min-width: 768px) {
+    .contacts-card {
+      flex-direction: row;
+      align-items: stretch;
+  }
+
+  .map {
+    height: auto;
+    width: 50%;
+  }
+
+  .contacts-data {
+    width: 50%;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icon {
+    width: 100%;
+  }
+}

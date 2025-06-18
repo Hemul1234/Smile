@@ -1,0 +1,11 @@
+.responsive-slider {
+  display: block;
+}
+
+.responsive-slider :global(.swiper-wrapper) {
+  align-items: stretch;
+}
+
+.responsive-slider :global(.swiper-slide) {
+  height: auto;
+}

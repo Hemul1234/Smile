@@ -1,0 +1,232 @@
+h1 {
+    font: 1.6em/1.37 "Involve-Medium";
+    color: #3659E1;
+}
+
+h2 {
+    font: 1.5rem/1.37 "Involve-Bold";
+    text-transform: uppercase;
+    color: #3659E1;
+}
+
+h3 {
+    font: 1.25em/1.37 "Involve-Medium";
+    color: #3659E1;
+}
+
+button {
+    background-color: #3556D7;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    font-family: "Involve-Regular";
+    color: #0A031A;
+}
+
+header {
+    height: calc(100vw*65/390);
+    background-color: #E1E7FF;
+    padding: calc(100vw*16/390);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    font-size: 16px;
+    flex: 1;
+    padding: calc(100vw*16/390);
+}
+
+/*Заголовки*/
+.title {
+    margin-bottom: 20px;
+}
+
+.doctors-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.doctors-breadcrumbs-item {
+    font: 1em/1 "Involve-Medium";
+    text-decoration: none;
+    color: #0A031A;
+}
+
+.doctors-breadcrumbs-separator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #3556D7;
+}
+
+/*блок услуг*/
+
+.services {
+    margin: 20px 0;
+}
+
+.services-items {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: calc(100vw*12/390);
+}
+
+.services-item {
+    background-color: #E1E7FF;
+    border-radius: calc(100vw*30/390);
+    padding: calc(100vw*16/390);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 6px;
+}
+
+.services-item-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.services-icon {
+    width: calc(100vw*36/390);
+    height: calc(100vw*36/390);
+    border-radius: 50%;
+    background-color: #3659E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-icon-inner {
+    height: 60%;
+    width: auto;
+}
+
+.services-item-cost {
+    color: #0A031A;
+    font: 1.5rem/1 "Involve-SemiBold";
+}
+
+.services-item-text {
+    color: #0A031A;
+    font: 1em/1.5 "Involve-SemiBold";
+}
+
+.sign-up {
+    height: calc(100vw*45/390);
+    width: 100%;
+    border-radius: calc(100vw*48/390);
+    background-color: #3556D7;
+    font-family: "Involve-Medium";
+    font-size: 16px;
+    color: #F3F3F3;
+}
+
+/*footer*/
+
+footer {
+    margin-top: calc(100vw*40/390);
+    height: calc(100vw*400/390);
+    background-color: #EDF0FC;
+    color: #3556D7;
+    display: flex;
+    flex-direction: column;
+    gap: calc(100vw*20/390);
+}
+
+.logo-footer {
+    margin-top: calc(100vw*12/390);
+}
+
+.footer-nav-block {
+    display: flex;
+    flex-direction: column;
+    gap: calc(100vw*14/390);
+}
+
+.footer-nav-block-name {
+    font: 1.125em/1 "Involve-SemiBold";
+}
+
+.footer-nav-block-text {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(100vw*14/390) 0;
+}
+
+.footer-nav-block-item {
+    width: 50%;
+    font: 1em/1 "Involve-Medium";
+}
+
+.footer-nav-block-item-bottom {
+    width: 100%;
+    font: 1em/1 "Involve-Medium";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: "Involve-Regular";
+    src:
+        url("../public/fonts/Involve/OTF/Involve-Regular.otf"),
+        url("../public/fonts/Involve/TTF/Involve-Regular.ttf");
+        font-style: normal; 
+        font-weight: normal;
+  }
+
+@font-face {
+    font-family: "Involve-Medium";
+    src:
+        url("../public/fonts/Involve/OTF/Involve-Medium.otf"),
+        url("../public/fonts/Involve/TTF/Involve-Medium.ttf");
+        font-style: normal; 
+        font-weight: normal;
+  }
+
+@font-face {
+    font-family: "Involve-SemiBold";
+    src:
+        url("../public/fonts/Involve/OTF/Involve-SemiBold.otf"),
+        url("../public/fonts/Involve/TTF/Involve-SemiBold.ttf");
+        font-style: normal; 
+        font-weight: normal;
+}
+
+@font-face {
+    font-family: "Involve-Bold";
+    src:
+        url("../public/fonts/Involve/OTF/Involve-Bold.otf"),
+        url("../public/fonts/Involve/TTF/Involve-Bold.ttf");
+        font-style: normal; 
+        font-weight: normal;
+  }

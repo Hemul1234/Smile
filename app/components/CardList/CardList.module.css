@@ -1,0 +1,49 @@
+.services-items {
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(358px, 1fr));
+    gap: clamp(12px, calc(12px + 8 * var(--adaptive)),20px);
+  }
+  
+
+  
+.know {
+    width: clamp(234px, calc(234px + 29 * var(--adaptive)), 263px);
+    height: clamp(45px, calc(45px + 24 * var(--adaptive)), 69px);
+    border-radius: 999px;
+    margin: auto;
+  }
+
+.doctors-desktop {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.doctors-desktop li:nth-child(1) {
+  grid-area: 1 / 1 / 3 / 2; /* занимает 2 строки слева */
+}
+.doctors-desktop li:nth-child(2) {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.doctors-desktop li:nth-child(3) {
+  grid-area: 1 / 3 / 2 / 4;
+}
+.doctors-desktop li:nth-child(4) {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.doctors-desktop li:nth-child(5) {
+  grid-area: 2 / 3 / 3 / 4;
+}
+  
+@media screen and (min-width: 768px) {
+  
+    .services-items {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+    }
+  
+  }

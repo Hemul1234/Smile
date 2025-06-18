@@ -1,0 +1,36 @@
+/*врачи заголовки*/
+
+.doctors-breadcrumbs {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 6px;
+    overflow: hidden;
+}
+
+.doctors-breadcrumbs-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font: 1em/1 "Involve-Medium";
+    white-space: nowrap;
+    text-decoration: none;
+    color: #0A031A;
+}
+
+.doctors-breadcrumbs-item::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 50px;
+    background-image: linear-gradient(to right, transparent, #fff);
+}
+
+
+.doctors-breadcrumbs-separator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #3556D7;
+}

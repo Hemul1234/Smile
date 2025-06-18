@@ -1,0 +1,92 @@
+.vacancies-list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, calc(20px + 20 * var(--adaptive)), 40px);
+    width: 100%;
+}
+
+.vacancy {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, calc(20px + 14 * var(--adaptive)), 34px);
+    width: 100%;
+    padding: clamp(18px, calc(18px + 14 * var(--adaptive)), 32px);
+    border-radius: clamp(30px, calc(30px + 10 * var(--adaptive)), 40px);
+    background-color: #EDF0FC;
+}
+
+.vacancy-name {
+    font: clamp(18px, calc(18px + 14 * var(--adaptive)), 32px) / 1 "Involve-Bold";
+    color: var(--black);
+}
+
+.vacancy-info {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, calc(20px + 14 * var(--adaptive)), 34px);
+    
+}
+
+.vacancy-section-name {
+    font: clamp(18px, calc(18px + 2 * var(--adaptive)), 20px) / 1.5 "Involve-Bold";
+}
+
+.vacancy-salary {
+    font: clamp(14px, calc(14px + 6 * var(--adaptive)), 20px) / 1.5 "Involve-Regular";
+}
+
+.vacancy-description {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, calc(8px + 24 * var(--adaptive)), 34px);
+}
+
+.vacancy-section-content {
+    list-style-position: inside;
+}
+
+.vacancy-section-item {
+    display: list-item;
+    list-style-position: outside; /* маркер снаружи блока */
+    margin-left: 1.5em;
+    list-style-type: disc;
+    font: clamp(14px, calc(14px + 6 * var(--adaptive)), 20px) / 1.5 "Involve-Regular";
+}
+
+.vacancy-hh-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(322px, calc(322px + 27 * var(--adaptive)), 349px);
+    height: clamp(45px, calc(45px + 19 * var(--adaptive)), 64px);
+    align-self: center;
+    border-radius: 999px;
+    font: clamp(16px, calc(16px + 8 * var(--adaptive)), 24px) / 1.5 "Involve-Medium";
+    background-color: var(--blue);
+    color: #FFFFFF;
+}
+
+.vacancy-hh-link:visited {
+    color: #FFFFFF;
+}
+
+@media screen and (min-width: 992px) {
+    .vacancy {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .vacancy-name {
+        width: 40%;
+        
+    }
+
+    .vacancy-info {
+        width: 60%;
+        
+    }
+
+    .vacancy-hh-link {
+        align-self: baseline;
+    }
+}

@@ -1,0 +1,100 @@
+/*footer*/
+
+.footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #EDF0FC;
+  }
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  width: 100%;
+  padding: clamp(16px, calc(16px + 12 * var(--adaptive)), 28px) clamp(16px, calc(16px + 64 * var(--adaptive)), 80px);
+  color: var(--blue);
+  gap: clamp(16px, calc(16px + 44 * var(--adaptive)), 60px);
+}
+  
+.logo-footer {
+    width: clamp(125px, calc(125px + 70 * var(--adaptive)), 195px);
+    height: auto;
+  }
+  
+.footer-nav-block {
+    display: grid;
+    grid-template: repeat(3, 1fr) / 40% 60%;
+    grid-template-areas: 
+    "name name"
+    "col1 col2"
+    "col1 col2";
+    gap: clamp(8px, calc(8px + 12 * var(--adaptive)), 20px);
+  }
+  
+.footer-nav-block-name {
+    grid-area: name;
+    font: clamp(18px, calc(18px + 2 * var(--adaptive)), 20px)/1 "Involve-SemiBold";
+  }
+  
+.footer-nav-block-item {
+    font: clamp(16px, calc(16px + 2 * var(--adaptive)), 18px)/1 "Involve-Medium";
+  }
+  
+.footer-nav-block-item-bottom {
+    grid-column: 1 / 3;
+    font: 1em/1 "Involve-Medium";
+  }
+
+.contacts {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+
+  .footer-nav {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .footer-nav-block {
+    grid-template-columns: 1fr; /* одна колонка */
+    grid-template-rows: auto;
+    grid-template-areas:
+      "name"
+      "col1"
+      "col2";
+    
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, calc(8px + 12 * var(--adaptive)), 20px);
+  }
+
+  .contacts-item {
+    display: block;
+  }
+
+  .contacts-item-icon {
+    display: inline;
+    height: 20px;
+    width: auto;
+    vertical-align: sub;
+    margin-right: 16px;
+  }
+
+  .contacts-item-label {
+    display: inline;
+    font-family: "Involve-SemiBold";
+  }
+
+  .contacts-item-information {
+    margin-left: 38px;
+  }
+}

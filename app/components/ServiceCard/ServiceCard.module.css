@@ -1,0 +1,41 @@
+.service-card {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 20px + 40 * var(--adaptive), 60px);
+}
+
+.content-items, .info-text, .info-items {
+    font: clamp(14px, 14px + 6 * var(--adaptive), 20px)/1.5 "Involve-Medium";
+    color: var(--black);
+}
+
+.content-items {
+    list-style-position: inside;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 20px + 40 * var(--adaptive), 60px);
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 12px + 8 * var(--adaptive), 20px);
+}
+
+.info-item {
+    list-style-position: inside;
+    list-style-type: disc;
+}
+
+.cost {
+    color: var(--black);
+}
+
+.blue-bg {
+    padding: clamp(16px, 16px + 16 * var(--adaptive), 32px);
+    border-radius: clamp(30px, 30px + 10 * var(--adaptive), 40px);
+    background-color: var(--violet);
+}

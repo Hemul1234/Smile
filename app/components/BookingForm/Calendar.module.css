@@ -1,0 +1,11 @@
+.wrapper {
+    width: 100%;
+    max-width: 358px;
+}
+
+.calendar {
+    padding: 26px;
+    border-radius: 40px;
+    background-color: var(--card);
+    --rdp-accent-color: var(--blue);
+}

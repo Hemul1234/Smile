@@ -1,0 +1,131 @@
+/*онлайн расчет*/
+
+.symptoms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  
+.teeth {
+    margin: auto;
+    width: clamp(358px, calc(358px + 55 * var(--adaptive)), 413px);
+    height: auto;
+  }
+  
+.symptoms-name {
+    font: clamp(18px, calc(18px + 14 * var(--adaptive)), 32px)/1 "Involve-Medium";
+    width: 100%;
+  }
+  
+.symptoms-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+    max-width: 100%;
+    gap: clamp(14px, calc(14px + 10 * var(--adaptive)), 24px);
+  }
+  
+.simptoms-item {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(100vw*8/390);
+  }
+  
+.symptoms-check {
+    width: 30px;
+    height: 30px;
+    appearance: none;
+    border: 2px solid #3556D7;
+    border-radius: 8px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  
+.symptoms-check::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: -2px;
+    top: -2px;
+    background: url("/images/icons/check.svg") no-repeat center;
+    transition: 500ms;
+  }
+  
+.symptoms-check:checked::after {
+    background-color: #3556D7;
+    border-radius: 8px;
+  }
+  
+.symptoms-label {
+    font-size: clamp(16px, calc(16px + 4 * var(--adaptive)), 20px);
+    color: var(--black);
+  }
+  
+.cost {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.cost-line {
+    padding-bottom: calc(100vw*16/390);
+    font: clamp(20px, calc(20px + 16 * var(--adaptive)), 36px)/1 "Involve-Medium";
+  }
+  
+.cost-calc {
+    font-family: "Involve-Bold";
+  }
+  
+.buttons-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+    gap: calc(100vw*8/390);
+  }
+  
+.symptoms-btn {
+    font-family: "Involve-Medium";
+    font-size: 1em;
+  }
+  
+@media screen and (min-width: 992px) {
+  
+    .symptoms {
+        display: grid;
+        grid-template: clamp(18px, calc(18px + 14 * var(--adaptive)), 32px) 1fr/413px repeat(2, 1fr);
+        grid-template-areas:
+        "image name name"
+        "image list list";
+        row-gap: calc(100vw*28/1440);
+        column-gap: calc(100vw*20/1440);
+    }
+  
+    .teeth {
+        grid-area: image;
+    }
+  
+    .symptoms-name {
+        grid-area: name;
+    }
+  
+    .symptoms-list {
+        grid-area: list;
+    }
+  
+    .cost {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+  
+    .cost-line {
+        padding: 0;
+    }
+  
+    .buttons-group {
+        display: flex;
+        gap: 20px;
+    }
+  
+    .symptoms-btn {
+        width: 245px;
+    }
+  
+  }

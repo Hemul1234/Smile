@@ -1,0 +1,144 @@
+/*Услуги*/
+
+.services-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: clamp(16px, 16px + 3 * var(--adaptive),19px);
+    border-radius: clamp(30px, 30px + 10 * var(--adaptive), 40px);
+    padding: clamp(16px, 16px + 16 * var(--adaptive), 32px);
+    background-color: #E1E7FF;
+  }
+  
+.services-item-title {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(14px,14px + 18 * var(--adaptive) ,32px);
+  }
+  
+.services-icon {
+    width: clamp(49px, 49px + 17 * var(--adaptive), 66px);
+    height: clamp(49px, 49px + 17 * var(--adaptive), 66px);
+    border-radius: 50%;
+    background-color: #3659E1;
+    align-content: center;
+    text-align: center;
+  }
+  
+.services-item-name {
+    font: clamp(20px, 20px + 4 * var(--adaptive), 24px)/1.25 "Involve-Bold";
+    color: #0A031A;
+  }
+  
+.services-item-cost {
+    font-family: "Involve-SemiBold";
+  }
+
+.sign-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: clamp(45px, 45px + 24 * var(--adaptive), 69px);
+    width: 100%;
+    border-radius: calc(100vw*48/390);
+    background-color: #3556D7;
+    font-family: "Involve-Medium";
+    font-size: 16px;
+    color: #F3F3F3;
+}
+
+/*Врачи*/
+
+.doctors-list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 358px;
+    border-radius: 40px;
+    padding: 32px;
+}
+
+.doctors-list-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.doc-name {
+    width: 70%;
+    font: 1.25em/1.4 "Involve-Bold";
+}
+
+.doc-position {
+    font-family: "Involve-Medium";
+}
+
+/*блок врачи для десктопа*/
+
+  .doctors-desktop-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(28px, calc(28px + 5 * var(--adaptive)), 33px);
+    padding: 32px;
+    border-radius: clamp(30px, calc(30px + 10 * var(--adaptive)), 40px);
+    background-color: #E1E7FF;
+    overflow: hidden;
+  }
+  
+  .doctors-desktop-card-text {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 65%;
+  }
+  
+  .doctors-desktop-card-name {
+    font: clamp(16px, 16px + 4 * var(--adaptive), 20px) / 1.5 "Involve-Bold";
+  }
+
+  .doctors-desktop-card-name-first {
+    font: clamp(16px, 16px + 8 * var(--adaptive), 24px) / 1.5 "Involve-Bold";
+  }
+  
+  .doctors-desktop-card-position {
+    font: clamp(14px, 14px + 4 * var(--adaptive), 18px)/1.5 "Involve-Medium";
+  }
+
+  .doctors-desktop-card-position-first {
+    font-size: clamp(14px, 14px + 6 * var(--adaptive), 20px);
+  }
+  
+  .more-details {
+    position: relative;
+    z-index: 10;
+    height: clamp(35px, 35px + 6 * var(--adaptive), 41px);
+    width: clamp(154px, 154px + 11 * var(--adaptive), 166px);
+    border-radius: 999px;
+    font-size: clamp(14px, 14px + 2 * var(--adaptive), 16px);
+  }
+
+  .more-details-first {
+    height: clamp(35px, 35px + 29 * var(--adaptive), 64px);
+    width: 100%;
+    font-size: clamp(14px, 14px + 10 * var(--adaptive), 24px);
+  }
+  
+  .women-doc {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 20px;
+    height: 90%;
+    width: auto;
+    align-self: end;
+  }
+
+  .women-doc-first {
+    right: 0;
+    height: auto;
+    width: 90%;
+  }

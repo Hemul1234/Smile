@@ -1,0 +1,62 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, calc(14px + 20 * var(--adaptive)), 34px);
+    width: 100%;
+    padding: clamp(18px, calc(18px + 22 * var(--adaptive)), 40px);
+    border-radius: 40px;
+    background-color: var(--card);
+}
+
+.card-title {
+    font: clamp(18px, calc(18px + 14 * var(--adaptive)), 32px) / 1.5 "Involve-SemiBold";
+    color: var(--blue);
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, calc(10px + 6 * var(--adaptive)), 16px);
+}
+
+.item-name {
+    font: clamp(18px, calc(18px + 10 * var(--adaptive)), 28px) / 1.5 "Involve-SemiBold";
+}
+
+.item-text {
+    font: clamp(14px, calc(14px + 10 * var(--adaptive)), 24px) / 1.5 "Involve-Regular";
+}
+
+.item-text-span {
+    font: clamp(16px, calc(16px + 10 * var(--adaptive)), 28px) / 1.5 "Involve-SemiBold";
+    color: var(--blue);
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, calc(8px + 34 * var(--adaptive)), 42px);
+}
+
+.details-row {
+    flex-direction: row;
+}
+
+.details-name {
+    font: clamp(16px, calc(16px + 10 * var(--adaptive)), 24px) / 1.5 "Involve-SemiBold";
+}
+
+.details-text {
+    font: clamp(16px, calc(16px + 10 * var(--adaptive)), 28px) / 1.5 "Involve-SemiBold";
+}
+
+@media screen and (min-width: 992px) {
+    .details {
+        flex-direction: row;
+    }
+
+    .details-name {
+        flex-shrink: 0;
+        width: 30%;
+    }
+}

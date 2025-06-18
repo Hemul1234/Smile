@@ -1,0 +1,37 @@
+.services-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(171px, 1fr));
+    gap: clamp(10px, calc(10px + 10 * var(--adaptive)), 20px) clamp(16px, calc(16px + 4 * var(--adaptive)), 20px);
+    width: 100%;
+}
+
+.item {
+    aspect-ratio: 413 / 317; /* сохрани пропорции */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(2px, calc(2px + 18 * var(--adaptive)), 20px);
+    border-radius: 19px;
+    background-color: var(--violet);
+    color: var(--blue);
+    transition: background-color 3s, color 3s;
+}
+
+.item:active {
+    background-color: var(--blue);
+    color: var(--violet);
+    transition: background-color 0s, color 0s;
+}
+
+.icon {
+    width: clamp(42px, 42px + 92 * var(--adaptive),134px);
+    height: clamp(37px, 37px + 81 * var(--adaptive),118px);
+}
+
+
+.name {
+    text-align: center;
+    font: clamp(15px, 15px + 17 * var(--adaptive), 32px)/1.5 "Involve-SemiBold";
+    text-transform: uppercase;
+}

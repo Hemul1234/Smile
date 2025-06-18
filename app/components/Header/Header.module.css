@@ -1,0 +1,338 @@
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: clamp(65px, calc(65px + 144 * var(--adaptive)), 209px);
+    background-color: var(--violet);
+  }
+
+.header.active {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+  }
+
+.header-head-cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+.header-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 clamp(16px, 16px + 64 * var(--adaptive), 80px);
+  }
+
+.logo-burger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: clamp(65px, calc(65px + 144 * var(--adaptive)), 209px);
+  }
+
+
+
+/*Гамбургер*/
+
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: var(--blue);
+  stroke-width:5.5;
+  stroke-linecap:round;
+}
+
+.ham4 .top {
+  stroke-dasharray: 40 121;
+}
+.ham4 .bottom {
+  stroke-dasharray: 40 121;
+}
+.ham4.active .top {
+  stroke-dashoffset: -68px;
+}
+.ham4.active .bottom {
+  stroke-dashoffset: -68px;
+}
+
+/*Контакты*/
+  
+.contacts, .contacts-item-label {
+    display: none;
+  }
+
+.contacts.active {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 12px 16px;
+}
+
+.contacts-item {
+  display: flex;
+  gap: 16px;
+  font: clamp(15px, calc(15px + 3 * var(--adaptive)), 18px)/2 "Involve-Regular";  
+}
+
+/*Меню навигации*/
+
+.navbar-bg {
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.navbar-bg.active {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  max-height: 1000px;
+  padding: clamp(16px, 16px + 64 * var(--adaptive), 80px);
+  opacity: 1;
+  transition: max-height 3s ease, opacity 1s ease;
+  }
+  
+.navbar {
+    display: none;
+  }
+
+.navbar.active {
+  display: block;
+  width: 100%;
+}
+
+.navbar-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, calc(12px + 28 * var(--adaptive)), 40px);
+  font-family: "Involve-Medium";
+}
+
+.navbar-list-item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.accordion-button {
+  fill: var(--black);
+  cursor: pointer;
+}
+
+.navbar-list-subitems {
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.navbar-list-subitems.active {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, calc(12px + 2 * var(--adaptive)), 14px);
+  max-height: 1000px;
+  padding: clamp(16px, calc(16px + 16 * var(--adaptive)), 32px);
+  opacity: 1;
+  transition: padding 0.5s ease, max-height 3s ease, opacity 1s ease;
+}
+
+.navbar-list-subitem {
+
+}
+
+.navbar-list-subitem-details {
+  display: none;
+}
+
+.search {
+  display: none;
+}
+  
+/*хедер для десктопа*/
+  
+@media screen and (min-width: 992px) {
+    .header {
+        flex-direction: column;
+    }
+  
+    .header-head-cover {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      background-color: var(--card);
+    }
+  
+    .header-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        max-width: 1440px;
+    }
+
+    .logo-burger {
+      display: block;
+      width: fit-content;
+      height: auto;
+    }
+  
+    .ham {
+        display: none;
+    }
+  
+    .contacts {
+        display: flex;
+        gap: calc(100vw*66/1440);
+    }
+  
+    .contacts-item {
+        color: var(--blue);
+        display: block;
+    }
+  
+    .contacts-item-icon {
+      display: inline;
+      height: 20px;
+      width: auto;
+      vertical-align: sub;
+      margin-right: 16px;
+    }
+  
+    .contacts-item-label {
+      display: inline;
+      font-family: "Involve-SemiBold";
+    }
+  
+    .contacts-item-information {
+      margin-left: 38px;
+    }
+  
+    .navbar-bg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: none;
+      width: 100%;
+      min-height: clamp(52px, calc(52px + 14 * var(--adaptive)),66px);
+      opacity: 1;
+      overflow: visible;
+    }
+  
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: clamp(49px, 49px + 17 * var(--adaptive), 66px);
+      max-width: 1440px;
+      padding: 0 clamp(16px, 16px + 64 * var(--adaptive), 80px);
+    }
+  
+    .navbar-list {
+      position: relative;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      gap: clamp(0px, 0px + 40 * var(--adaptive), 40px);
+    }
+  
+    .navbar-list-item {
+      gap: 8px;
+      font: calc(10px + 8 * ((100vw - 390px) / (1440 - 390)))/1 "Involve-Medium";
+      color: var(--blue);
+    }
+
+    .accordion-button {
+      fill: var(--blue);
+    }
+
+    .navbar-list-subitems {
+      position: absolute;
+      z-index: 10;
+      top: 100%;
+      left: 0;
+      display: none;
+      grid-template-columns: 55% auto;
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas:
+      "terapy other"
+      "terapy other"
+      "terapy other";
+      column-gap: clamp(12px, calc(16px + 16 * var(--adaptive)),32px);
+      row-gap: 20px;
+      padding: clamp(16px, calc(16px + 16 * var(--adaptive)), 32px);
+      max-height: none;
+      opacity: 1;
+      border-radius: 0 0 clamp(30px, calc(30px + 10 * var(--adaptive)),  40px) clamp(30px, calc(30px + 10 * var(--adaptive)),  40px);
+      background-color: var(--violet);
+      width: fit-content;
+    }
+
+    .navbar-list-item:hover .navbar-list-subitems {
+      display: grid;
+    }
+
+    .navbar-list-subitem {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(12px, calc(12px + 4 * var(--adaptive)),16px);
+      font-family: "Involve-Bold";
+      width: fit-content;
+    }
+
+    .navbar-list-subitem-terapy {
+      grid-area: terapy;
+    }
+
+    .navbar-list-subitem-details {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(10px, calc(10px + 4 * var(--adaptive)),14px);
+      font-family: "Involve-Regular";
+      font-size: 16px;
+      color: var(--black);
+      width: fit-content;
+    }
+
+    .navbar-list-subitem-details-item {
+      width: fit-content;
+    }
+
+  
+    .search {
+      display: block;
+        height: 48px;
+        width: calc(200px + 105 * ((100vw - 390px) / (1440 - 390)));
+        background-color: #F6F8FD;
+        border-radius: 100px;
+        padding-left: 12px;
+    }
+  } 
