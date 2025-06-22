@@ -1,50 +1,312 @@
 [
-    {
-        "text": "Нужна консультация"
-    },
-    {
-        "text": "Профессиональная гигиена полости рта"
-    },
-    {
-        "text": "Зуб болит"
-    },
-    {
-        "text": "На зубе темное пятно, не болит"
-    },
-    {
-        "text": "Скол на зубе"
-    },
-    {
-        "text": "Металлическая коронка на зуб"
-    },
-    {
-        "text": "Керамичиская коронка на зуб"
-    },
-    {
-        "text": "Полный съемный пластиночный протез на 1 челюсть"
-    },
-    {
-        "text": "Полный съемный протез из нейлона на 1 челюсть"
-    },
-    {
-        "text": "Удаление зуба"
-    },
-    {
-        "text": "Имплантация зуба"
-    },
-    {
-        "text": "Винир керамический"
-    },
-    {
-        "text": "Установка металлических брекетов на всю челюсть"
-    },
-    {
-        "text": "Установка керамичиских брекетов на всю челюсть"
-    },
-    {
-        "text": "Отбеливание системой Zoom 4"
-    },
-    {
-        "text": "Постановка постоянной пломбы после эндоскопического лечения"
-    }
+  {
+    "symptom": "Зубная боль",
+    "slug-service": "konsultaciya-vracha-stomatologa-s-sostavleniem-plana-lecheniya",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Неприятный запах изо рта",
+    "slug-service": "konsultaciya-vracha-stomatologa-s-sostavleniem-plana-lecheniya",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Наличие кариозных полостей",
+    "slug-service": "konsultaciya-vracha-stomatologa-s-sostavleniem-plana-lecheniya",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Белые пятна на эмали",
+    "slug-service": "lechenie-kariesa-postoyannogo-zuba",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Реакция зуба на сладкое или холодное",
+    "slug-service": "lechenie-kariesa-postoyannogo-zuba",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Ощущение дырочки на поверхности зуба",
+    "slug-service": "lechenie-kariesa-postoyannogo-zuba",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Повреждение эмали",
+    "slug-service": "plombirovanie-zuba-svetovoj-plomboj",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Чувствительность зуба при еде",
+    "slug-service": "plombirovanie-zuba-svetovoj-plomboj",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Ослабленная структура зуба",
+    "slug-service": "plombirovanie-zuba-svetovoj-plomboj",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Скол зуба или реставрации",
+    "slug-service": "restavraciya-frontalnogo-zuba",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Эстетические дефекты зубов",
+    "slug-service": "restavraciya-frontalnogo-zuba",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Потемнение или пятна на зубах",
+    "slug-service": "glubokoe-ftorirovanie-emali",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Повышенная чувствительность эмали",
+    "slug-service": "glubokoe-ftorirovanie-emali",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Начальные кариозные изменения",
+    "slug-service": "lechenie-nachalnogo-kariesa-icon",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Боль при контакте с горячим или холодным",
+    "slug-service": "lechenie-nachalnogo-kariesa-icon",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Острая зубная боль",
+    "slug-service": "lechenie-pulpita-s-plombirovaniem-kanalov",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Пульсирующая боль в зубе",
+    "slug-service": "lechenie-pulpita-s-plombirovaniem-kanalov",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Отек десны возле зуба",
+    "slug-service": "lechenie-pulpita-s-plombirovaniem-kanalov",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Боль после лечения кариеса",
+    "slug-service": "endodonticheskoe-lechenie-3-h-kanalnogo-zuba",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Острая чувствительность зуба",
+    "slug-service": "endodonticheskoe-lechenie-3-h-kanalnogo-zuba",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Боль при жевании",
+    "slug-service": "professionalnaya-chistka-ultrazvukom",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Налет и зубной камень",
+    "slug-service": "gigienicheskaya-chistka-air-flow-effektivnaya-procedura-udaleniya-naleta-i-pigmentacii-s-pomoshyu-strui-vozduha-vody-i-poroshka",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Пигментация зубов",
+    "slug-service": "gigienicheskaya-chistka-air-flow-effektivnaya-procedura-udaleniya-naleta-i-pigmentacii-s-pomoshyu-strui-vozduha-vody-i-poroshka",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Воспаление и боль в зубе",
+    "slug-service": "obrabotka-kornevogo-kanala-antiseptikami",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Появление абсцесса или свища",
+    "slug-service": "obrabotka-kornevogo-kanala-antiseptikami",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Подозрение на скрытые кариозные полости",
+    "slug-service": "diagnostika-s-ispolzovaniem-cifrovogo-zonda",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Боль и отек после удаления зуба",
+    "slug-service": "udalenie-odnokornevogo-zuba",
+    "category": "surgery"
+  },
+  {
+    "symptom": "Затрудненное жевание после удаления",
+    "slug-service": "udalenie-mnogokornevogo-zuba",
+    "category": "surgery"
+  },
+  {
+    "symptom": "Боль и отек после сложного удаления зуба мудрости",
+    "slug-service": "slozhnoe-udalenie-zuba-mudrosti",
+    "category": "surgery"
+  },
+  {
+    "symptom": "Хроническая боль в области корня зуба",
+    "slug-service": "rezekciya-verhushki-kornya",
+    "category": "surgery"
+  },
+  {
+    "symptom": "Ограничение подвижности губы",
+    "slug-service": "plastika-uzdechki-verhnej-guby",
+    "category": "surgery"
+  },
+  {
+    "symptom": "Ограничение подвижности языка",
+    "slug-service": "plastika-uzdechki-yazyka",
+    "category": "surgery"
+  },
+  {
+    "symptom": "Кровоточивость десен",
+    "slug-service": "otkrytyj-kyuretazh-pri-parodontite",
+    "category": "surgery"
+  },
+  {
+    "symptom": "Воспаление пародонтальных карманов",
+    "slug-service": "zakrytyj-kyuretazh-parodontalnyh-karmanov",
+    "category": "surgery"
+  },
+  {
+    "symptom": "Отсутствие зуба без коронки",
+    "slug-service": "implantaciya-zuba-bez-koronki",
+    "category": "prosthetics"
+  },
+  {
+    "symptom": "Отсутствие зуба с установкой Nobel Biocare",
+    "slug-service": "ustanovka-implanta-nobel-biocare",
+    "category": "prosthetics"
+  },
+  {
+    "symptom": "Недостаток костной ткани",
+    "slug-service": "osteoplastika-narashivanie-kostnoj-tkani",
+    "category": "surgery"
+  },
+  {
+    "symptom": "Необходимость синус-лифтинга",
+    "slug-service": "sinus-lifting-zakrytyj",
+    "category": "surgery"
+  },
+  {
+    "symptom": "Пигментация зубов",
+    "slug-service": "professionalnoe-otbelivanie-zoom-4",
+    "category": "esthetic"
+  },
+  {
+    "symptom": "Неравномерный цвет эмали",
+    "slug-service": "professionalnoe-otbelivanie-zoom-4",
+    "category": "esthetic"
+  },
+  {
+    "symptom": "Сколы и трещины зубов",
+    "slug-service": "esteticheskaya-restavraciya-zuba",
+    "category": "esthetic"
+  },
+  {
+    "symptom": "Шероховатая поверхность зубов",
+    "slug-service": "polirovka-i-shlifovka-zubov",
+    "category": "esthetic"
+  },
+  {
+    "symptom": "Ослабление эмали",
+    "slug-service": "remineralizaciya-emali",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Неровные или поврежденные передние зубы",
+    "slug-service": "ustanovka-vinira-keramicheskogo",
+    "category": "esthetic"
+  },
+  {
+    "symptom": "Неровные зубы с композитным покрытием",
+    "slug-service": "ustanovka-kompozitnogo-vinira",
+    "category": "esthetic"
+  },
+  {
+    "symptom": "Пятна и налет на зубах",
+    "slug-service": "otbelivanie-domashnee-kapy-gel",
+    "category": "esthetic"
+  },
+  {
+    "symptom": "Потемнение эмали после отбеливания",
+    "slug-service": "tonirovanie-zubov-posle-otbelivaniya",
+    "category": "esthetic"
+  },
+  {
+    "symptom": "Появление страз на зубах",
+    "slug-service": "ukrashenie-zuba-strazami",
+    "category": "esthetic"
+  },
+  {
+    "symptom": "Тетрациклиновый налет",
+    "slug-service": "udalenie-tetraciklinovogo-nalyota",
+    "category": "esthetic"
+  },
+  {
+    "symptom": "Хрупкая эмаль",
+    "slug-service": "ozonirovanie-zubov-dlya-ukrepleniya-emali",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Временная реставрация зуба",
+    "slug-service": "ustanovka-estetichnoj-vremennoj-plomby",
+    "category": "terapy"
+  },
+  {
+    "symptom": "Поломка коронки",
+    "slug-service": "ustanovka-metallokeramicheskoj-koronki",
+    "category": "prosthetics"
+  },
+  {
+    "symptom": "Повреждение керамической коронки",
+    "slug-service": "keramicheskaya-koronka-e-max",
+    "category": "prosthetics"
+  },
+  {
+    "symptom": "Металлические дефекты коронки",
+    "slug-service": "metallicheskaya-koronka-s-napyleniem",
+    "category": "prosthetics"
+  },
+  {
+    "symptom": "Необходимость временной коронки",
+    "slug-service": "vremennaya-koronka-luxatemp",
+    "category": "prosthetics"
+  },
+  {
+    "symptom": "Отсутствие зубов для съемного протеза",
+    "slug-service": "byugelnyj-protez",
+    "category": "prosthetics"
+  },
+  {
+    "symptom": "Отсутствие зубов для акрилового протеза",
+    "slug-service": "akrilovyj-suemnyj-protez",
+    "category": "prosthetics"
+  },
+  {
+    "symptom": "Отсутствие зубов на одной челюсти",
+    "slug-service": "polnyj-suemnyj-protez-na-odnu-chelyust",
+    "category": "prosthetics"
+  },
+  {
+    "symptom": "Отсутствие зубов с несъемным протезированием",
+    "slug-service": "nesuemnoe-protezirovanie-na-implantah",
+    "category": "prosthetics"
+  },
+  {
+    "symptom": "Поломка цельнолитой коронки",
+    "slug-service": "celnolitaya-koronka",
+    "category": "prosthetics"
+  },
+  {
+    "symptom": "Необходимость вкладки культевой",
+    "slug-service": "vkladka-kultevoj-shtiftovaya",
+    "category": "prosthetics"
+  },
+  {
+    "symptom": "Проблемы с фиксацией ортопедической конструкции",
+    "slug-service": "cementirovka-ortopedicheskoj-konstrukcii",
+    "category": "prosthetics"
+  }
 ]
