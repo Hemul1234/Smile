@@ -9,8 +9,11 @@ import { CardList } from "./components/CardList/CardList";
 import { TeethFragment } from "./components/OnlineCalculation/TeethFragment";
 import { SymptomsFragment } from "./components/OnlineCalculation/SymptomsFragment";
 import { symptomsData } from "./data/symptomsData";
+import { useServicesByCategory } from "./api/api-hooks";
 
 import { getDataByTypeAndCategory } from "./data/dataUtils";
+
+const { data: services, isLoading: servicesLoading, error: servicesError } = useServicesByCategory('promo');
 
 export default function Home() {
 
@@ -18,7 +21,7 @@ export default function Home() {
     <main>
         <FirstBlock title="Проверьте здоровье"/>
         <Section id="services" title="Услуги">
-          <CardList variant={'services'} data={getDataByTypeAndCategory('services', 'promo')} />
+          <CardList variant={'services'} data={services} />
         </Section>
         <Section id="doctors" title="Врачи">
           <DoctorsSliderWrapper data={getDataByTypeAndCategory('doctors')}/>
