@@ -6,7 +6,6 @@ export const services = [
     category: 'terapy',
     cost: 1500,
     text: 'Консультация врача-стоматолога с составлением плана лечения',
-    buttonText: 'Записаться',
     article: {
       title: 'Консультация врача-стоматолога с составлением плана лечения',
       content: [
@@ -67,7 +66,6 @@ export const services = [
     category: 'terapy',
     cost: 3500,
     text: 'Лечение кариеса постоянного зуба',
-    buttonText: 'Записаться',
     article: {
       title: 'Лечение кариеса постоянного зуба',
       content: [
@@ -114,7 +112,6 @@ export const services = [
     category: 'terapy',
     cost: 4800,
     text: 'Пломбирование зуба световой пломбой',
-    buttonText: 'Записаться',
     article: {
       title: 'Пломбирование зуба световой пломбой',
       content: [
@@ -160,7 +157,6 @@ export const services = [
     category: 'terapy',
     cost: 6000,
     text: 'Реставрация фронтального зуба',
-    buttonText: 'Записаться',
     article: {
       title: 'Реставрация фронтального зуба',
       content: [
@@ -207,7 +203,6 @@ export const services = [
     category: 'terapy',
     cost: 800,
     text: 'Глубокое фторирование эмали',
-    buttonText: 'Записаться',
     article: {
       title: 'Глубокое фторирование эмали',
       content: [
@@ -250,49 +245,42 @@ export const services = [
     category: 'terapy',
     cost: 950,
     text: 'Лечение начального кариеса ICON',
-    buttonText: 'Записаться',
   },
   {
     id: 6,
     category: 'terapy',
     cost: 4000,
     text: 'Лечение пульпита с пломбированием каналов',
-    buttonText: 'Записаться',
   },
   {
     id: 7,
     category: 'terapy',
     cost: 7000,
     text: 'Эндодонтическое лечение 3-х канального зуба',
-    buttonText: 'Записаться',
   },
   {
     id: 8,
     category: 'terapy',
     cost: 1200,
     text: 'Профессиональная чистка ультразвуком',
-    buttonText: 'Записаться',
   },
   {
     id: 9,
     category: 'terapy',
     cost: 2500,
     text: 'Гигиеническая чистка Air Flow',
-    buttonText: 'Записаться',
   },
   {
     id: 10,
     category: 'terapy',
     cost: 1700,
     text: 'Обработка корневого канала антисептиками',
-    buttonText: 'Записаться',
   },
   {
     id: 11,
     category: 'terapy',
     cost: 500,
     text: 'Диагностика с использованием цифрового зонда',
-    buttonText: 'Записаться',
   },
 
   // Хирургические услуги
@@ -301,7 +289,6 @@ export const services = [
     category: 'surgery',
     cost: 4000,
     text: 'Удаление однокорневого зуба',
-    buttonText: 'Записаться',
     article: {
       title: 'Удаление однокорневого зуба',
       content: [
@@ -345,77 +332,66 @@ export const services = [
     category: 'surgery',
     cost: 7000,
     text: 'Удаление многокорневого зуба',
-    buttonText: 'Записаться',
   },
   {
     id: 14,
     category: 'surgery',
     cost: 12000,
     text: 'Сложное удаление зуба мудрости',
-    buttonText: 'Записаться',
   },
   {
     id: 15,
     category: 'surgery',
     cost: 15000,
     text: 'Резекция верхушки корня',
-    buttonText: 'Записаться',
   },
   {
     id: 16,
     category: 'surgery',
     cost: 6500,
     text: 'Пластика уздечки верхней губы',
-    buttonText: 'Записаться',
   },
   {
     id: 17,
     category: 'surgery',
     cost: 5000,
     text: 'Пластика уздечки языка',
-    buttonText: 'Записаться',
   },
   {
     id: 18,
     category: 'surgery',
     cost: 18000,
     text: 'Открытый кюретаж при пародонтите',
-    buttonText: 'Записаться',
   },
   {
     id: 19,
     category: 'surgery',
     cost: 10000,
     text: 'Закрытый кюретаж пародонтальных карманов',
-    buttonText: 'Записаться',
   },
   {
     id: 20,
     category: 'surgery',
     cost: 25000,
     text: 'Имплантация зуба (без коронки)',
-    buttonText: 'Записаться',
   },
   {
     id: 21,
     category: 'surgery',
     cost: 35000,
     text: 'Установка импланта Nobel Biocare',
-    buttonText: 'Записаться',
   },
   {
     id: 22,
     category: 'surgery',
     cost: 9000,
     text: 'Остеопластика (наращивание костной ткани)',
-    buttonText: 'Записаться',
   },
   {
     id: 23,
     category: 'surgery',
     cost: 11000,
     text: 'Синус-лифтинг закрытый',
-    buttonText: 'Записаться',
   },
 
   // Эстетические услуги
@@ -424,7 +400,6 @@ export const services = [
     category: 'esthetic',
     cost: 8000,
     text: 'Профессиональное отбеливание ZOOM 4',
-    buttonText: 'Записаться',
     article: {
       title: 'Профессиональное отбеливание ZOOM 4',
       content: [
@@ -468,77 +443,66 @@ export const services = [
     category: 'esthetic',
     cost: 5000,
     text: 'Эстетическая реставрация зуба',
-    buttonText: 'Записаться',
   },
   {
     id: 26,
     category: 'esthetic',
     cost: 1200,
     text: 'Полировка и шлифовка зубов',
-    buttonText: 'Записаться',
   },
   {
     id: 27,
     category: 'esthetic',
     cost: 3000,
     text: 'Реминерализация эмали',
-    buttonText: 'Записаться',
   },
   {
     id: 28,
     category: 'esthetic',
     cost: 35000,
     text: 'Установка винира керамического',
-    buttonText: 'Записаться',
   },
   {
     id: 29,
     category: 'esthetic',
     cost: 25000,
     text: 'Установка композитного винира',
-    buttonText: 'Записаться',
   },
   {
     id: 30,
     category: 'esthetic',
     cost: 7000,
     text: 'Отбеливание домашнее (капы + гель)',
-    buttonText: 'Записаться',
   },
   {
     id: 31,
     category: 'esthetic',
     cost: 2000,
     text: 'Тонирование зубов после отбеливания',
-    buttonText: 'Записаться',
   },
   {
     id: 32,
     category: 'esthetic',
     cost: 900,
     text: 'Украшение зуба стразами',
-    buttonText: 'Записаться',
   },
   {
     id: 33,
     category: 'esthetic',
     cost: 5500,
     text: 'Удаление тетрациклинового налёта',
-    buttonText: 'Записаться',
   },
   {
     id: 34,
     category: 'esthetic',
     cost: 1500,
     text: 'Озонирование зубов для укрепления эмали',
-    buttonText: 'Записаться',
   },
   {
     id: 35,
     category: 'esthetic',
     cost: 1800,
     text: 'Установка эстетичной временной пломбы',
-    buttonText: 'Записаться',
   },
 
   // Протезирование
@@ -547,7 +511,6 @@ export const services = [
     category: 'prosthetics',
     cost: 35000,
     text: 'Установка металлокерамической коронки',
-    buttonText: 'Записаться',
     article: {
       title: 'Установка металлокерамической коронки',
       content: [
@@ -595,77 +558,66 @@ export const services = [
     category: 'prosthetics',
     cost: 45000,
     text: 'Керамическая коронка E-max',
-    buttonText: 'Записаться',
   },
   {
     id: 38,
     category: 'prosthetics',
     cost: 25000,
     text: 'Металлическая коронка с напылением',
-    buttonText: 'Записаться',
   },
   {
     id: 39,
     category: 'prosthetics',
     cost: 20000,
     text: 'Временная коронка Luxatemp',
-    buttonText: 'Записаться',
   },
   {
     id: 40,
     category: 'prosthetics',
     cost: 60000,
     text: 'Бюгельный протез',
-    buttonText: 'Записаться',
   },
   {
     id: 41,
     category: 'prosthetics',
     cost: 52000,
     text: 'Акриловый съемный протез',
-    buttonText: 'Записаться',
   },
   {
     id: 42,
     category: 'prosthetics',
     cost: 95000,
     text: 'Полный съемный протез (на одну челюсть)',
-    buttonText: 'Записаться',
   },
   {
     id: 43,
     category: 'prosthetics',
     cost: 110000,
     text: 'Несъемное протезирование на имплантах',
-    buttonText: 'Записаться',
   },
   {
     id: 44,
     category: 'prosthetics',
     cost: 38000,
     text: 'Цельнолитая коронка',
-    buttonText: 'Записаться',
   },
   {
     id: 45,
     category: 'prosthetics',
     cost: 16000,
     text: 'Вкладка культевой штифтовая',
-    buttonText: 'Записаться',
   },
   {
     id: 46,
     category: 'prosthetics',
     cost: 8000,
     text: 'Цементировка ортопедической конструкции',
-    buttonText: 'Записаться',
   },
   {
     id: 47,
     category: 'prosthetics',
     cost: 24000,
     text: 'Изготовление индивидуальной ложки',
-    buttonText: 'Записаться',
   },
 
   //Промо

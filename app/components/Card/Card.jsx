@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Styles from "./Card.module.css"
 
-export function Card ({variant, slug, category, name, photo, specialization, cost, text, buttonText, isFirst}) {
+export function Card ({variant, slug, category, name, photo, specialization, cost, text, isFirst}) {
     if (variant === "services") {
         return (
             <li className={Styles["services-item"]}>
@@ -14,7 +14,7 @@ export function Card ({variant, slug, category, name, photo, specialization, cos
                 <p className={Styles["services-item-text"]}>
                     {text}
                 </p>
-                {buttonText && (<Link className={Styles["sign-up"]} href={`/services/${category}/${slug}`}>{buttonText}</Link>)}
+                <Link className={Styles["sign-up"]} href={`/services/${category}/${slug}`}>Подробнее</Link>
             </li>
         );
     }
