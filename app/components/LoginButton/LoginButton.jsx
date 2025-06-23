@@ -1,3 +1,5 @@
+"use client"
+
 import Styles from './LoginButton.module.css';
 
 import { useAuth } from "@/app/context/AuthContext";

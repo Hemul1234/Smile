@@ -11,7 +11,7 @@ import { useModal } from "@/app/context/ModalContext";
 import { LoginOrAccountButton } from "../LoginButton/LoginButton";
 
 export const Header = () => {
-
+    
     const pathname = usePathname();
     const [burgerActive, setBurgerActive] = useState(false);
     const {active, toggleActive} = useToggleActive();
