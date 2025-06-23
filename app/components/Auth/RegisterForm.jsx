@@ -2,36 +2,96 @@ import Styles from './Form.module.css';
 import { useState } from "react";
 import { useAuth } from "@/app/context/AuthContext";
 import { useModal } from "@/app/context/ModalContext";
+import { toast, Bounce } from "react-toastify";
+
+// Функция для полной валидации и нормализации телефона
+function validateRegistration(form) {
+  const errors = {};
+
+  // ФИО: не пустое
+  if (!form.fullName || !form.fullName.trim()) {
+    errors.fullName = "Имя обязательно";
+  }
+
+  // Телефон: разрешить 8XXXXXXXXXX или +7XXXXXXXXXX, привести к +7XXXXXXXXXX
+  let cleanPhone = form.phone.replace(/\D/g, ""); // только цифры
+  if (cleanPhone.startsWith("8") && cleanPhone.length === 11) {
+    cleanPhone = "7" + cleanPhone.slice(1);
+  }
+  if (cleanPhone.startsWith("7") && cleanPhone.length === 11) {
+    // ок
+  } else {
+    errors.phone = "Телефон некорректный. Пример: +7XXXXXXXXXX или 8XXXXXXXXXX";
+  }
+  const formattedPhone = "+7" + cleanPhone.slice(-10);
+
+  // Email: валидный
+  if (!form.email || !/^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/.test(form.email)) {
+    errors.email = "Email некорректный";
+  }
+
+  // Пароль: минимум 6 символов
+  if (!form.password || form.password.length < 6) {
+    errors.password = "Пароль минимум 6 символов";
+  }
+
+  return { errors, formattedPhone };
+}
 
 export const RegisterForm = () => {
   const { closeModal } = useModal();
-  // Расширяем форму под все нужные поля
-  const [form, setForm] = useState({ fullName: "", phone: "", email: "", password: "" });
-  const [error, setError] = useState(null);
-  const { register, login } = useAuth(); // получаем глобальные методы
+  const [form, setForm] = useState({
+    fullName: "",
+    phone: "",
+    email: "",
+    password: ""
+  });
+  const [error, setError] = useState({});
+  const { register, login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null);
+    setError({});
 
-    // 1. Регистрируем пользователя (добавляем в БД)
-    const res = await register(form);
-    if (res.error) {
-    if (res.error.includes("409")) {
-      setError("Пользователь с таким email уже зарегистрирован.");
-    } else {
-      setError(res.error);
+    // Клиентская валидация
+    const { errors, formattedPhone } = validateRegistration(form);
+    if (Object.keys(errors).length > 0) {
+      setError(errors);
+      return;
     }
-    return;
-  }
-    // 2. Если регистрация успешна, сразу выполняем вход
-    // Если register сразу возвращает токен и пользователя, login можно не вызывать!
-    // Если нет — после регистрации выполни login
-    if (!res.token) {
-      const loginRes = await login({ email: form.email, password: form.password });
-      if (loginRes.error) setError(loginRes.error);
+
+    // Отправляем уже форматированный телефон
+    let res = null;
+    try {
+      res = await register({ ...form, phone: formattedPhone });
+    } catch (err) {
+      setError({ global: "Ошибка сети. Попробуйте ещё раз." });
+      return;
     }
-    // Можно закрыть модалку, редиректить и т.д.
+
+    if (res && (res.error || res.message)) {
+      const msg = res.message || res.error;
+      if (msg && (msg.includes("уже существует") || msg.includes("409"))) {
+        setError({ global: "Пользователь с таким email или телефоном уже зарегистрирован." });
+      } else {
+        setError({ global: msg || "Ошибка регистрации." });
+      }
+      return;
+    }
+
+    toast.success("Регистрация прошла успешно!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce
+    });
+    setForm({ fullName: "", phone: "", email: "", password: "" }); // сбрасываем форму
+    closeModal(); // закрываем модалку
   };
 
   return (
@@ -46,6 +106,7 @@ export const RegisterForm = () => {
           value={form.fullName}
           onChange={e => setForm(f => ({ ...f, fullName: e.target.value }))}
         />
+        {error.fullName && <div style={{ color: "red" }}>{error.fullName}</div>}
       </label>
       <label className={Styles["label"]}>
         Введите ваш номер телефона
@@ -53,10 +114,11 @@ export const RegisterForm = () => {
           className={Styles["input"]}
           type="tel"
           required
-          placeholder="+7123456789"
+          placeholder="Любой формат номера"
           value={form.phone}
           onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
         />
+        {error.phone && <div style={{ color: "red" }}>{error.phone}</div>}
       </label>
       <label className={Styles["label"]}>
         Введите ваш email
@@ -68,6 +130,7 @@ export const RegisterForm = () => {
           value={form.email}
           onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
         />
+        {error.email && <div style={{ color: "red" }}>{error.email}</div>}
       </label>
       <label className={Styles["label"]}>
         Введите ваш пароль
@@ -79,6 +142,7 @@ export const RegisterForm = () => {
           value={form.password}
           onChange={e => setForm(f => ({ ...f, password: e.target.value }))}
         />
+        {error.password && <div style={{ color: "red" }}>{error.password}</div>}
       </label>
       <div className={Styles["checkbox-appoint"]}>
         <input id="checkbox-personal-data-in-modal" className={Styles["checkbox-check"]} type="checkbox" name="check" value="small" required />
@@ -87,7 +151,7 @@ export const RegisterForm = () => {
         </label>
       </div>
       <button className={Styles["button"]} type="submit">Зарегистрироваться</button>
-      {error && <div style={{ color: "red" }}>{error}</div>}
+      {error.global && <div style={{ color: "red" }}>{error.global}</div>}
     </form>
   );
 };
