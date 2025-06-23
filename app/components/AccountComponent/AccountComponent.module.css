@@ -4,17 +4,31 @@
     gap: clamp(20px, calc(20px + 26 * var(--adaptive)), 46px);
 }
 
-.account-info {
+.account-info-read {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
+.account-info {
+    display: block;
+    width: 100%;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    width: 100%;
+}
 
 .name {
     font: clamp(20px, calc(20px + 12 * var(--adaptive)), 32px) / 1.37 "Involve-Medium";
 }
 
 .text {
+    width: 100%;
     font: clamp(16px, calc(16px + 4 * var(--adaptive)), 20px) / 1.37 "Involve-Regular";
 }
   
@@ -23,7 +37,7 @@
         flex-direction: row;
     }
 
-    .account-info {
+    .account-info-read {
         grid-template-columns: repeat(2, 1fr);
     }
 
