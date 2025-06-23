@@ -1,16 +1,14 @@
 
-import { getDataByTypeAndCategory }from "@/app/data/dataUtils";
 import { Section } from "@/app/components/Section/Section";
 import { Breadcrumbs } from "@/app/components/Breadcrumbs/Breadcrumbs";
-import { CardList } from "@/app/components/CardList/CardList";
+import { AccountComponent } from "../components/AccountComponent/AccountComponent";
 
-export default async function CategoryPage({ params }) {
-  const { category } = await params
+export default async function PhotoPage() {
   return (
     <main>
-        <Section id="services-terapy" title="Услуги">
+        <Section id="personal-account" title="Личный кабинет">
           <Breadcrumbs />
-          <CardList variant={'services'} data={ getDataByTypeAndCategory('services', `${category}`)} />
+          <AccountComponent />
         </Section>
     </main>
   );

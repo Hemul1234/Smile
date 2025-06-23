@@ -1,0 +1,22 @@
+.account-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  
+@media screen and (min-width: 768px) {
+    .account {
+
+    }
+
+    .account-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .doctor-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+}

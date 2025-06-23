@@ -1,0 +1,38 @@
+.cover {
+    position: relative;
+    width: 100%;
+    max-width: 416px;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius);
+    background-color: var(--violet);
+}
+
+.photo-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.photo-icon:hover {
+    position: absolute;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.photo {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: var(--radius);
+}
