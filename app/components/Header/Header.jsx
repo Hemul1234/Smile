@@ -8,6 +8,7 @@ import { useToggleActive } from "@/app/hooks/useToggleActive";
 import { useMediaQuery } from 'react-responsive';
 import { getDataByTypeAndCategory } from "@/app/data/dataUtils";
 import { useModal } from "@/app/context/ModalContext";
+import { LoginOrAccountButton } from "../LoginButton/LoginButton";
 
 export const Header = () => {
 
@@ -154,7 +155,7 @@ export const Header = () => {
                         <li className={Styles["navbar-list-item"]}>Контакты</li>
                     </ul>
                     <div className={Styles["search-group"]}>
-                        <button className={Styles["button-login"]} onClick={() => openModal("login")}>Войти</button>
+                        <LoginOrAccountButton openModal={openModal}/>
                         <input className={Styles.search} type="search" placeholder="поиск"/>
                     </div>
                 </nav>

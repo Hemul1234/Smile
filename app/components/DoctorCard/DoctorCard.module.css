@@ -17,6 +17,7 @@
     justify-content: center;
     background-color: var(--violet);
     border-radius: 30px;
+    overflow: hidden;
 }
 
 .photo {
@@ -27,6 +28,14 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+.name {
+    font: clamp(20px, calc(20px + 12 * var(--adaptive)), 32px) / 1.37 "Involve-Medium";
+}
+
+.text {
+    font: clamp(16px, calc(16px + 4 * var(--adaptive)), 20px) / 1.37 "Involve-Regular";
 }
 
 .buttons {

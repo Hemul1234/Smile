@@ -1,0 +1,9 @@
+.button-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 100%;
+  border-radius: 100px;
+  padding: 0 34px;
+}
