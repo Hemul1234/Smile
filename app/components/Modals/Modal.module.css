@@ -1,0 +1,69 @@
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  gap: clamp(20px, calc(20px + 8 * var(--adaptive)), 28px);
+  background: #fff;
+  border-radius: var(--radius);
+  padding: clamp(16px, calc(16px + 16 * var(--adaptive)), 32px);
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.title-text {
+  text-transform: none;
+}
+
+.redirect-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: clamp(8px, calc(8px + 4 * var(--adaptive)), 12px);
+}
+
+.label {
+  width: 100%;
+  text-align: center;
+  font: clamp(16px, calc(16px + 4 * var(--adaptive)), 20px) / 1 "Involve-Medium";
+}
+
+.button {
+  display: block;
+  width: 100%;
+  height: auto;
+  font: clamp(16px, calc(16px + 4 * var(--adaptive)), 20px) / 1 "Involve-Medium";
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.close-icon {
+  width: auto;
+  height: clamp(24px, calc(24px + 16 * var(--adaptive)), 40px);
+  display: block;
+  stroke: var(--blue);
+  transition: stroke .2s;
+  cursor: pointer;
+}
+
+.close-icon:hover {
+  stroke: rgb(10, 10, 148);
+}

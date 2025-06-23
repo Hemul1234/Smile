@@ -1,0 +1,76 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(10px, calc(16px + 6 * var(--adaptive)), 22px);
+    width: 100%;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, calc(8px + 8 * var(--adaptive)), 16px);
+    width: 100%;
+    font: clamp(18px, calc(18px + 6 * var(--adaptive)), 24px) / 1 "Involve-Medium";
+}
+
+.input {
+    width: 100%;
+    height: clamp(44px, calc(44px + 14 * var(--adaptive)), 58px);
+    padding-left: clamp(22px, calc(22px + 10 * var(--adaptive)), 32px);
+    border-radius: 999px;
+    background-color: var(--violet);
+    font: clamp(16px, calc(16px + 4 * var(--adaptive)), 20px) / 1.5 "Involve-Medium";
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: clamp(44px, calc(44px + 14 * var(--adaptive)), 58px);
+    border-radius: 999px;
+    background-color: var(--blue);
+}
+
+.checkbox-appoint {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+.checkbox-check {
+    width: 30px;
+    height: 30px;
+    appearance: none;
+    border: 2px solid #3556D7;
+    border-radius: 8px;
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  
+.checkbox-check::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: -2px;
+    top: -2px;
+    background: url("/images/icons/check.svg") no-repeat center;
+    transition: 500ms;
+  }
+  
+.checkbox-check:checked::after {
+    background-color: #3556D7;
+    border-radius: 8px;
+  }
+  
+.checkbox-label {
+    font-size: clamp(16px, calc(16px + 4 * var(--adaptive)), 20px);
+    color: var(--black);
+  }
+
+@media screen and (min-width: 768px) {
+
+}

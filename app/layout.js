@@ -18,7 +18,6 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
           <Footer />
-          {/* Рендерим глобальные модалки */}
           <AuthModal />
           <BookingModal />
         </ModalProvider>

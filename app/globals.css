@@ -92,6 +92,7 @@ legend {
   --black: #0A031A;
   --violet: #E1E7FF;
   --card: #EDF0FC;
+  --radius: clamp(30px, calc(30px + 10 * var(--adaptive)), 40px);
 }
 
 h1 {
