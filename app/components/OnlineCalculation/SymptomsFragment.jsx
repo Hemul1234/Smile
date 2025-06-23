@@ -10,7 +10,7 @@ export const SymptomsFragment = ({items}) => {
                         <li className={Styles["simptoms-item"]} key={item.id}>
                             <input id={item.id} className={Styles["symptoms-check"]} type="checkbox" name="check" value="small"/>
                             <label htmlFor={item.id} className={Styles["symptoms-label"]}>
-                                {item.text}
+                                {item.symptom}
                             </label>
                         </li>
                     );

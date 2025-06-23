@@ -8,15 +8,12 @@ import { Contacts } from "./components/Contacts/Contacts";
 import { CardList } from "./components/CardList/CardList";
 import { TeethFragment } from "./components/OnlineCalculation/TeethFragment";
 import { SymptomsFragment } from "./components/OnlineCalculation/SymptomsFragment";
-import { symptomsData } from "./data/symptomsData";
-import { useServicesByCategory } from "./api/api-hooks";
+import { getServicesByCategory, getAllDoctors,getAllSymptoms } from "./api/api-utils";
 
-import { getDataByTypeAndCategory } from "./data/dataUtils";
-
-const { data: services, isLoading: servicesLoading, error: servicesError } = useServicesByCategory('promo');
-
-export default function Home() {
-
+export default async function Home() {
+  const services = await getServicesByCategory('promo');
+  const doctors = await getAllDoctors();
+  const symptoms = await getAllSymptoms();
   return (
     <main>
         <FirstBlock title="Проверьте здоровье"/>
@@ -24,12 +21,12 @@ export default function Home() {
           <CardList variant={'services'} data={services} />
         </Section>
         <Section id="doctors" title="Врачи">
-          <DoctorsSliderWrapper data={getDataByTypeAndCategory('doctors')}/>
+          <DoctorsSliderWrapper data={doctors}/>
         </Section>
         <Section align="center" title="Онлайн расчет стоимости лечения зубов">
           <OnlineCalculation>
             <TeethFragment />
-            <SymptomsFragment items={symptomsData} />
+            <SymptomsFragment items={symptoms} />
           </OnlineCalculation>
         </Section>
         <Section title="Отзывы">

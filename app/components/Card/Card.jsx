@@ -29,7 +29,7 @@ export function Card ({variant, slug, category, name, photo, specialization, cos
                         {specialization}
                     </p>
                 </div>
-                <button className={Styles["sign-up"]}>Подробней</button>
+                <Link className={Styles["sign-up"]} href={`/doctors/${slug}`}>Подробней</Link>
             </li>
         );
     }

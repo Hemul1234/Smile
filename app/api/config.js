@@ -1,5 +1,5 @@
 // Адрес бэкенда (задать через .env: NEXT_PUBLIC_API_URL)
-export const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api";
+export const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
 
 export const endpoints = {
   // --- АВТОРИЗАЦИЯ ---
@@ -21,22 +21,23 @@ export const endpoints = {
 
   // --- ВРАЧИ ---
   doctors: `${BASE_URL}/doctors`,
-  doctorById: (id) => `${BASE_URL}/doctors/${id}`,
+  doctorById: (id) => `${BASE_URL}/doctors/id/${id}`,
   doctorBySlug: (slug) => `${BASE_URL}/doctors/slug/${slug}`,
+  doctorByCategory: (category) => `${BASE_URL}/doctors/category/${category}`,
 
   // --- УСЛУГИ ---
   services: `${BASE_URL}/services`,
   serviceById: (id) => `${BASE_URL}/services/${id}`,
-  servicesByCategory: (category) => `${BASE_URL}/services/category/${category}`,
-  serviceBySlug: (slug) => `${BASE_URL}/services/slug/${slug}`,
+  servicesByCategory: (category) => `${BASE_URL}/services/${category}`,
+  serviceBySlug: (slug) => `${BASE_URL}/services/${slug}`,
   serviceByCategoryAndSlug: (category, slug) =>
-    `${BASE_URL}/services/category/${category}/slug/${slug}`,
+    `${BASE_URL}/services/category/${category}/${slug}`,
 
   // --- СИМПТОМЫ ---
   symptoms: `${BASE_URL}/symptoms`,
   symptomById: (id) => `${BASE_URL}/symptoms/${id}`,
-  symptomBySlug: (slug) => `${BASE_URL}/symptoms/slug/${slug}`,
-  symptomsByCategory: (category) => `${BASE_URL}/symptoms/category/${category}`,
+  symptomBySlug: (slug) => `${BASE_URL}/symptoms/${slug}`,
+  symptomsByCategory: (category) => `${BASE_URL}/symptoms/${category}`,
   symptomsByService: (slugService) =>
     `${BASE_URL}/symptoms/service/${slugService}`,
 

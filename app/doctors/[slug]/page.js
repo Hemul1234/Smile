@@ -1,28 +1,32 @@
 import { Section } from "@/app/components/Section/Section";
+import {  DoctorCard } from "@/app/components/DoctorCard/DoctorCard";
 import { Breadcrumbs } from "@/app/components/Breadcrumbs/Breadcrumbs";
 import { BookingForm } from "@/app/components/BookingForm/BookingForm"
 import { ReviewsSlider } from "@/app/components/reviewsSlider/ReviewsSlider";
-import { extractServiceData } from "@/app/data/dataUtils";
+import { getDoctorBySlug } from "@/app/api/api-utils";
+import { getServicesByCategory } from "@/app/api/api-utils";
 
-export default async function Service({params}) {
+export default async function Doctor({params}) {
 
   const { slug } = await params
-  const serviceData = extractServiceData(slug);
+  const doctor = await getDoctorBySlug(slug);
+  const services = await getServicesByCategory(doctor.category);
 
-  if (!serviceData) {
-      return <div>Услуга не найдена</div>;
+  if (!doctor) {
+      return <div>Врач не найден</div>;
     }
 
   return (
     <main>
         <Section id="doctor">
           <Breadcrumbs />
+          <DoctorCard doctor={doctor} />
         </Section>
         <Section title="Отзывы">
           <ReviewsSlider />
         </Section>
         <Section id="make-an-appointment" title="Запись на прием">
-          <BookingForm data={serviceData} />
+          <BookingForm data={services} />
         </Section>
     </main>
   );

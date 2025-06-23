@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { getDataByTypeAndCategory } from "@/app/data/dataUtils";
+import { filterDoctorsByCategory } from "@/app/data/dataUtils";
 import { CardList } from "../CardList/CardList";
 import { DoctorsSwitch } from "./DoctorsSwitch";
 
@@ -14,12 +15,12 @@ const categoryMap = {
   "Микроскописты": "microscopist"
 };
 
-export default function DoctorsPage() {
+export default function DoctorsPage({data}) {
   const [selectedCategory, setSelectedCategory] = useState("Ортодонты");
 
   const doctorsData = useMemo(() => {
     const category = categoryMap[selectedCategory];
-    return getDataByTypeAndCategory("doctors", category);
+    return filterDoctorsByCategory(data, category);
   }, [selectedCategory]);
 
   return (

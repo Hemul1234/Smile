@@ -1,13 +1,12 @@
 // Универсальные утилиты для работы с Smile-backend API
 import { endpoints } from "./config";
-import normalizeDataObject from "./normalize";
 
 // --- Работа с JWT только через localStorage ---
 export const setJWT = (jwt) => localStorage.setItem("jwt", jwt);
 export const getJWT = () => localStorage.getItem("jwt");
 export const removeJWT = () => localStorage.removeItem("jwt");
 
-// Базовые методы HTTP
+// --- Базовые методы HTTP ---
 const getHeaders = (token, isJson = true) => {
   const headers = {};
   if (isJson) headers["Content-Type"] = "application/json";
@@ -19,8 +18,7 @@ export const getData = async (url, token) => {
   try {
     const response = await fetch(url, { headers: getHeaders(token, false) });
     if (!response.ok) throw new Error(`Ошибка получения данных: ${response.status}`);
-    const data = await response.json();
-    return normalizeDataObject(data);
+    return await response.json();
   } catch (error) {
     return { error: error.message };
   }
@@ -133,12 +131,3 @@ export const deleteReview = (id, token = getJWT()) => deleteData(endpoints.revie
 
 // --- Вспомогательное ---
 export const isResponseOk = (response) => !response?.error;
-
-//export async function getServicesByCategory(category) {
-  //const url = `${process.env.NEXT_PUBLIC_API_URL}/services/${category}`;
-  //const res = await fetch(url, { cache: "no-store" }); // cache: "no-store" чтобы всегда были свежие данные
-  //if (!res.ok) throw new Error('Ошибка загрузки услуг');
-  //const data = await res.json();
-  //return normalizeDataObject(data);
-//}
-

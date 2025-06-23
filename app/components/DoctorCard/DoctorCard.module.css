@@ -1,0 +1,68 @@
+.doctor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.doctor-information {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, calc(20px + 6 * var(--adaptive)), 26px);
+    width: 100%;
+}
+
+.doctor-photo {
+    display: flex;
+    justify-content: center;
+    background-color: var(--violet);
+    border-radius: 30px;
+}
+
+.photo {
+    width: clamp(358px, calc(358px + 165 * var(--adaptive)), 523px);
+}
+
+.doctor-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+@media screen and (min-width: 768px) {
+    .doctor {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: none;
+        width: 100%;
+    }
+
+    .doctor-photo {
+        width: 70%;
+        height: fit-content;
+    }
+
+    .doctor-information {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: none;
+        width: 100%;
+    }
+
+    .button {
+        width: 50%;
+    }
+}

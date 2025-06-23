@@ -7,6 +7,10 @@ const datasets = {
   doctors,
 };
 
+export function filterDoctorsByCategory(doctors, category) {
+  return doctors.filter(doc => doc.category === category);
+}
+
 
 export const getDataByTypeAndCategory = (type, category) => {
     const list = datasets[type];
