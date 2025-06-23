@@ -18,7 +18,7 @@ export default function AuthModal() {
             <div className={Styles["title"]}>
               <h2 className={Styles["title-text"]}>Авторизация</h2>
               <svg className={Styles["close-icon"]} width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={closeModal}>
-                  <path d="M46.8335 46.832L3.8335 3.83203M46.8335 3.83203L3.8335 46.832" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M46.8335 46.832L3.8335 3.83203M46.8335 3.83203L3.8335 46.832" strokeWidth="6" strokeLinecap="round"/>
               </svg>
             </div>
             <LoginForm />
@@ -32,7 +32,7 @@ export default function AuthModal() {
             <div className={Styles["title"]}>
               <h2 className={Styles["title-text"]}>Регистрация</h2>
               <svg className={Styles["close-icon"]} width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={closeModal}>
-                  <path d="M46.8335 46.832L3.8335 3.83203M46.8335 3.83203L3.8335 46.832" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M46.8335 46.832L3.8335 3.83203M46.8335 3.83203L3.8335 46.832" strokeWidth="6" strokeLinecap="round"/>
               </svg>
             </div>
             <RegisterForm />
