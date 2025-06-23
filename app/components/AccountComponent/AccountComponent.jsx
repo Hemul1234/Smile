@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Styles from './AccountComponent.module.css';
 import { Photo } from "./Photo/Photo";
 import { useAuth } from "@/app/context/AuthContext";
+import { patchMe } from "@/app/api/api-utils"; // добавлено
 
 function formatDate(dateString) {
   if (!dateString) return "";
@@ -13,7 +14,7 @@ function formatDate(dateString) {
 }
 
 export const AccountComponent = () => {
-  const { user, logout, updateUser } = useAuth();
+  const { user, logout, setUser } = useAuth();
   const [editMode, setEditMode] = useState(false);
   const [form, setForm] = useState({
     fullName: user?.fullName || "",
@@ -22,7 +23,6 @@ export const AccountComponent = () => {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
   const router = useRouter();
 
   if (!user) return <div>Загрузка...</div>;
@@ -35,7 +35,6 @@ export const AccountComponent = () => {
     });
     setEditMode(true);
     setError("");
-    setSuccess("");
   };
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -43,32 +42,16 @@ export const AccountComponent = () => {
   const handleCancel = () => {
     setEditMode(false);
     setError("");
-    setSuccess("");
   };
 
   const handleSave = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
-    setSuccess("");
     try {
-      const token = localStorage.getItem('jwt');
-      const res = await fetch('http://localhost:5000/api/users/me', {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
-        },
-        body: JSON.stringify(form)
-      });
-      if (!res.ok) {
-        const resp = await res.json().catch(() => ({}));
-        throw new Error(resp.error || resp.message || "Ошибка обновления профиля");
-      }
-      const updatedUser = await res.json();
-      updateUser(updatedUser);
+      const updatedUser = await patchMe(form);
+      setUser(updatedUser);
       setEditMode(false);
-      setSuccess("Данные успешно обновлены!");
     } catch (err) {
       setError(err.message || "Ошибка");
     } finally {
@@ -119,7 +102,6 @@ export const AccountComponent = () => {
               />
             </div>
             {error && <div className={Styles["error"]}>{error}</div>}
-            {success && <div className={Styles["success"]}>{success}</div>}
             <button className={Styles["button"]} type="submit" disabled={loading}>
               Сохранить
             </button>
@@ -146,7 +128,6 @@ export const AccountComponent = () => {
               <p className={Styles["text"]}>{user.email}</p>
             </div>
             {error && <div className={Styles["error"]}>{error}</div>}
-            {success && <div className={Styles["success"]}>{success}</div>}
             <button className={Styles["button"]} onClick={handleEdit}>
               Редактировать
             </button>

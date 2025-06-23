@@ -54,6 +54,21 @@ export const patchData = async (url, data, token) => {
   }
 };
 
+export const patchAuthorizenData = async (url, data, token) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  if (token) headers["Authorization"] = `Bearer ${token}`;
+  const res = await fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(data),
+  });
+  const json = await res.json();
+  if (!res.ok) throw json;
+  return json;
+};
+
 export const deleteData = async (url, token) => {
   try {
     const response = await fetch(url, {
@@ -75,6 +90,7 @@ export const logout = (token) => postData(endpoints.logout, {}, token);
 
 // --- USER ---
 export const getMe = (token = getJWT()) => getData(endpoints.me, token);
+export const patchMe = (data, token = getJWT()) => patchAuthorizenData(endpoints.me, data, token);
 
 // --- CONTACT INFO ---
 export const getContactInfo = () => getData(endpoints.contactInfo);
