@@ -7,12 +7,14 @@ import Link from "next/link";
 import { useToggleActive } from "@/app/hooks/useToggleActive";
 import { useMediaQuery } from 'react-responsive';
 import { getDataByTypeAndCategory } from "@/app/data/dataUtils";
+import { useModal } from "@/app/context/ModalContext";
 
 export const Header = () => {
 
     const pathname = usePathname();
     const [burgerActive, setBurgerActive] = useState(false);
     const {active, toggleActive} = useToggleActive();
+    const { openModal } = useModal();
     
     const [terapy, surgery, esthetic, prosthetics] = 
         ['terapy', 'surgery', 'esthetic', 'prosthetics']
@@ -151,7 +153,10 @@ export const Header = () => {
                         <li className={Styles["navbar-list-item"]}><Link href="/doctors" onClick={() => setIsActive(handleCloseMenu)}>Врачи</Link></li>
                         <li className={Styles["navbar-list-item"]}>Контакты</li>
                     </ul>
-                    <input className={Styles.search} type="search" placeholder="поиск"/>
+                    <div className={Styles["search-group"]}>
+                        <button className={Styles["button-login"]} onClick={() => openModal("login")}>Войти</button>
+                        <input className={Styles.search} type="search" placeholder="поиск"/>
+                    </div>
                 </nav>
             </div>
         </header>

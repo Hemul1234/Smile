@@ -121,7 +121,9 @@
   }
 
 .navbar.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, calc(12px + 28 * var(--adaptive)), 40px);;
   width: 100%;
 }
 
@@ -136,6 +138,33 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.search-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, calc(12px + 8 * var(--adaptive)), 20px);
+}
+
+.button-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 100%;
+  border-radius: 100px;
+  padding: 0 34px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  width: 100%;
+  background-color: #F6F8FD;
+  border-radius: 100px;
+  padding-left: 12px;
 }
 
 .accordion-button {
@@ -168,10 +197,20 @@
   display: none;
 }
 
-.search {
-  display: none;
+@media screen and (min-width: 768px) {
+  .search-group {
+    flex-direction: row;
+  }
+
+  .button-login {
+    width: auto;
+  }
+
+  .search {
+    
+  }
 }
-  
+
 /*хедер для десктопа*/
   
 @media screen and (min-width: 992px) {
