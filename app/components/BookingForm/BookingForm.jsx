@@ -13,6 +13,7 @@ import { useModal } from "@/app/context/ModalContext";
 import { getBlockedTimes } from "@/app/api/api-utils";
 
 
+
 // 🔍 Валидация и нормализация телефона
 const validateBooking = ({ name, tel, date, time, doctor, service, doctors, services, personalData }) => {
   const errors = {};
@@ -52,6 +53,7 @@ export function BookingForm({ services = [], doctors = [] }) {
   const [personalData, setPersonalData] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({});
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -119,9 +121,7 @@ export function BookingForm({ services = [], doctors = [] }) {
     setCallback(false);
     setPersonalData(false);
   };
-  
 
-  console.log(getBlockedTimes())
 
   return (
     <form className={Styles["make-an-appointment"]} onSubmit={handleSubmit}>
@@ -135,7 +135,7 @@ export function BookingForm({ services = [], doctors = [] }) {
             Выберите время
             <div className={Styles["select-wrapper"]}>
               <TimeSelect
-                blocked={[]}
+                blocked={["10:00", "11:30"]}
                 onSelect={setSelectedTime}
                 selected={selectedTime}
               />

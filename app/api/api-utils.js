@@ -39,7 +39,7 @@ export const getData = async (url, token) => {
   try {
     const response = await fetch(url, {
       headers: getHeaders(token, false),
-      credentials: token ? 'include' : 'omit',
+      credentials: 'include',
     });
     const data = await parseResponse(response);
     if (data.error) return data;

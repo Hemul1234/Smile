@@ -63,7 +63,7 @@
     border-radius: 999px;
     font: clamp(16px, calc(16px + 8 * var(--adaptive)), 24px) / 1.5 "Involve-Medium";
     background-color: var(--blue);
-    color: #FFFFFF;
+    color: #FFFFFF !important;
 }
 
 .vacancy-hh-link:visited {
