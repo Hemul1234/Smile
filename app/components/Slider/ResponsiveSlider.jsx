@@ -37,7 +37,7 @@ export function ResponsiveSlider({
         autoplay={autoplay && { delay: 3000 }}
         loop={true}
       >
-        {items.map((item, index) => (
+        {(items ?? []).map((item, index) => (
           <SwiperSlide key={item.id || index}>
             {renderItem(item)}
           </SwiperSlide>

@@ -102,14 +102,14 @@ export const Header = () => {
                             <ul className={`${Styles["navbar-list-subitems"]} ${active === 0 ? Styles.active : ''}`}>
                                 <li className={`${Styles["navbar-list-subitem"]} ${Styles["navbar-list-subitem-terapy"]}`}><Link href="/services/terapy">Терапия</Link>
                                     <ul className={Styles["navbar-list-subitem-details"]}>
-                                        {terapy.slice(0, 7).map(({text, category, slug}, index) => (
+                                        {(terapy.slice(0, 7) ?? []).map(({text, category, slug}, index) => (
                                             <li className={Styles["navbar-list-subitem-details-item"]} key={index}><Link href={`/services/${category}/${slug}`}>{text}</Link></li>
                                         ))}
                                     </ul>
                                 </li>
                                 <li className={Styles["navbar-list-subitem"]}><Link href="/services/surgery">Хирургия</Link>
                                     <ul className={Styles["navbar-list-subitem-details"]}>
-                                        {surgery.slice(0, 3).map(({text, category, slug}, index) => {
+                                        {(surgery.slice(0, 3) ?? []).map(({text, category, slug}, index) => {
                                             const preview = text.split(" ").slice(0, 3).join(" ");
                                             return (
                                                 <li className={Styles["navbar-list-subitem-details-item"]} key={index}><Link href={`/services/${category}/${slug}`}>{preview}</Link></li>
@@ -119,7 +119,7 @@ export const Header = () => {
                                 </li>
                                 <li className={Styles["navbar-list-subitem"]}><Link href="/services/esthetic">Эстетика</Link>
                                     <ul className={Styles["navbar-list-subitem-details"]}>
-                                        {esthetic.slice(0, 3).map(({text, category, slug}, index) => {
+                                        {(esthetic.slice(0, 3)?? []).map(({text, category, slug}, index) => {
                                             const preview = text.split(" ").slice(0, 3).join(" ");
                                             return (
                                                 <li className={Styles["navbar-list-subitem-details-item"]} key={index}><Link href={`/services/${category}/${slug}`}>{preview}</Link></li>
@@ -129,7 +129,7 @@ export const Header = () => {
                                 </li>
                                 <li className={Styles["navbar-list-subitem"]}><Link href="/services/prosthetics">Протезирование зубов</Link>
                                     <ul className={Styles["navbar-list-subitem-details"]}>
-                                        {prosthetics.slice(0, 3).map(({text, category, slug}, index) => {
+                                        {(prosthetics.slice(0, 3)?? []).map(({text, category, slug}, index) => {
                                             const preview = text.split(" ").slice(0, 4).join(" ");
                                             return (
                                                 <li className={Styles["navbar-list-subitem-details-item"]} key={index}><Link href={`/services/${category}/${slug}`}>{preview}</Link></li>

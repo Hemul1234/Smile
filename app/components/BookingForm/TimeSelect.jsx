@@ -37,6 +37,7 @@ export function TimeSelect({
   const [internalSelected, setInternalSelected] = useState('');
   const ref = useRef(null);
   const timeSlots = generateTimeSlots(start, end, interval);
+  blocked = Array.isArray(blocked) ? blocked : [];
 
   useEffect(() => {
     const handleOutsideClick = (e) => {

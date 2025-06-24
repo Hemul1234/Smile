@@ -10,6 +10,7 @@ export function Select({
   blocked = [],      // массив строк
   placeholder = "Выберите вариант"
 }) {
+  options = Array.isArray(options) ? options : [];
   const [open, setOpen] = useState(false);
   // внутренний state нужен только если selected не передан
   const [internalSelected, setInternalSelected] = useState('');

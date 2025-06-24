@@ -21,7 +21,7 @@ export const getDataByTypeAndCategory = (type, category) => {
 
     const categoryKey = 'category';
 
-    const dataWithSlugs = list.map(item => {
+    const dataWithSlugs = (list ?? []).map(item => {
 
         const sourceString = type ==='services' ? item.text : item.name;
 

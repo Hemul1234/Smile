@@ -12,9 +12,12 @@ const doctorCategory = [
 ];
 
 export const DoctorsSwitch = ({ active, onChange }) => {
+  // Защита от неправильного типа doctorCategory
+  const safeCategories = Array.isArray(doctorCategory) ? doctorCategory : [];
+
   return (
     <div className={Styles["doctors-nav"]}>
-      {doctorCategory.map((category) => (
+      {safeCategories.map((category) => (
         <div
           key={category}
           className={clsx(

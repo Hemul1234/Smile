@@ -5,7 +5,7 @@ export const SymptomsFragment = ({items}) => {
         <>
             <p className={Styles["symptoms-name"]}>Выберите симптомы</p>
             <ul className={Styles["symptoms-list"]}>
-                {items.map((item) => {
+                {(items?? []).map((item) => {
                     return (
                         <li className={Styles["simptoms-item"]} key={item.id}>
                             <input id={item.id} className={Styles["symptoms-check"]} type="checkbox" name="check" value="small"/>
