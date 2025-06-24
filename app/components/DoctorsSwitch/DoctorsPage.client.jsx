@@ -19,9 +19,11 @@ export default function DoctorsPage({data}) {
   const [selectedCategory, setSelectedCategory] = useState("Ортодонты");
 
   const doctorsData = useMemo(() => {
-    const category = categoryMap[selectedCategory];
-    return filterDoctorsByCategory(data, category);
-  }, [selectedCategory]);
+  const category = categoryMap[selectedCategory];
+  const safeData = Array.isArray(data) ? data : [];
+  return filterDoctorsByCategory(safeData, category);
+}, [selectedCategory, data]);
+
 
   return (
     <>
