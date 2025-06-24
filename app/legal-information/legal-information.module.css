@@ -9,7 +9,7 @@
 }
 
 .card-title {
-    font: clamp(18px, calc(18px + 14 * var(--adaptive)), 32px) / 1.5 "Involve-SemiBold";
+    font: clamp(18px, calc(18px + 10 * var(--adaptive)), 28px) / 1.5 "Involve-SemiBold";
     color: var(--blue);
 }
 
@@ -20,11 +20,11 @@
 }
 
 .item-name {
-    font: clamp(18px, calc(18px + 10 * var(--adaptive)), 28px) / 1.5 "Involve-SemiBold";
+    font: clamp(18px, calc(18px + 6 * var(--adaptive)), 24px) / 1.5 "Involve-SemiBold";
 }
 
 .item-text {
-    font: clamp(14px, calc(14px + 10 * var(--adaptive)), 24px) / 1.5 "Involve-Regular";
+    font: clamp(14px, calc(14px + 6 * var(--adaptive)), 20px) / 1.5 "Involve-Regular";
 }
 
 .item-text-span {

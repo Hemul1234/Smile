@@ -44,7 +44,7 @@
     background-color: #3556D7;
     font-family: "Involve-Medium";
     font-size: 16px;
-    color: #F3F3F3;
+    color: #F3F3F3 !important;
 }
 
 /*Врачи*/
@@ -119,6 +119,7 @@
     width: clamp(154px, 154px + 11 * var(--adaptive), 166px);
     border-radius: 999px;
     font-size: clamp(14px, 14px + 2 * var(--adaptive), 16px);
+    color: white !important;
   }
 
   .more-details-first {

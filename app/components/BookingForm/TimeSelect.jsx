@@ -24,13 +24,17 @@ function generateTimeSlots(start = '09:00', end = '18:00', interval = 30) {
 }
 
 export function TimeSelect({
-  blocked = [], // массив строк ['10:00', '12:30']
+  blocked = [],
   start = '09:00',
   end = '18:00',
   interval = 30,
+  onSelect,
+  selected,
+  placeholder = "Выберите время"
 }) {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState('');
+  // внутренний selected, если не controlled
+  const [internalSelected, setInternalSelected] = useState('');
   const ref = useRef(null);
   const timeSlots = generateTimeSlots(start, end, interval);
 
@@ -44,18 +48,30 @@ export function TimeSelect({
     return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, []);
 
+  useEffect(() => {
+    if (selected !== undefined) setInternalSelected(selected);
+  }, [selected]);
+
   const handleSelect = (time) => {
     if (blocked.includes(time)) return;
-    setSelected(time);
     setOpen(false);
-    onSelect?.(time);
+    if (onSelect) onSelect(time);
+    if (selected === undefined) setInternalSelected(time);
   };
+
+  const chosen = selected !== undefined ? selected : internalSelected;
 
   return (
     <div className={Styles.wrapper} ref={ref}>
-      <button onClick={() => setOpen(!open)} className={Styles.input}>
-        <p className={`${Styles.placeholder} ${!selected ? Styles.opacity : ''}`}>{selected || '12:13'}</p>
-        <img className={Styles["accordion-icon"]} src="/images/icons/accordSignUp.svg" alt="icon"></img>
+      <button
+        onClick={() => setOpen(!open)}
+        className={Styles.input}
+        type="button"
+      >
+        <p className={`${Styles.placeholder} ${!chosen ? Styles.opacity : ''}`}>
+          {chosen || placeholder}
+        </p>
+        <img className={Styles["accordion-icon"]} src="/images/icons/accordSignUp.svg" alt="icon" />
       </button>
 
       {open && (
@@ -65,7 +81,7 @@ export function TimeSelect({
             return (
               <div
                 key={time}
-                className={`${Styles.option} ${isBlocked ? Styles.disabled : ''}`}
+                className={`${Styles.option} ${isBlocked ? Styles.disabled : ''} ${chosen === time ? Styles.selected : ''}`}
                 onClick={() => handleSelect(time)}
               >
                 {time}
