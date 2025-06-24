@@ -1,0 +1,13 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/doctors/page": "/doctors",
+  "/account/page": "/account",
+  "/page": "/",
+  "/doctors/[slug]/page": "/doctors/[slug]",
+  "/vacancies/page": "/vacancies",
+  "/services/[category]/page": "/services/[category]",
+  "/services/[category]/[slug]/page": "/services/[category]/[slug]",
+  "/legal-information/page": "/legal-information",
+  "/services/page": "/services"
+}
