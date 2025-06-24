@@ -127,7 +127,7 @@ button {
   justify-content: center;
   font-family: "Involve-Medium";
   background-color: var(--blue);
-  color: var(--white);
+  color: var(--white) !important;
   border-radius: 999px;
 }
 

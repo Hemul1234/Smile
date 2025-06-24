@@ -1,6 +1,9 @@
 "use client";
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
-import { getJWT, setJWT, removeJWT, getMe, login as loginAPI, register as registerAPI } from "../api/api-utils";
+import {
+  getJWT, setJWT, removeJWT,
+  getMe, login as loginAPI, register as registerAPI
+} from "../api/api-utils";
 
 const AuthContext = createContext();
 
@@ -11,22 +14,30 @@ export const AuthProvider = ({ children }) => {
   // Логин
   const login = useCallback(async (form) => {
     const res = await loginAPI(form);
+
+    if (res.error) return res; // Не сохраняем токен, если ошибка
+
     if (res.token) {
       setJWT(res.token);
       setIsAuth(true);
       setUser(res.user || null);
     }
+
     return res;
   }, []);
 
   // Регистрация
   const register = useCallback(async (form) => {
     const res = await registerAPI(form);
+
+    if (res.error) return res;
+
     if (res.token) {
       setJWT(res.token);
       setIsAuth(true);
       setUser(res.user || null);
     }
+
     return res;
   }, []);
 
@@ -40,14 +51,14 @@ export const AuthProvider = ({ children }) => {
   // Проверка токена и загрузка пользователя при старте
   const checkAuth = useCallback(async () => {
     const token = getJWT();
-    if (token) {
-      const me = await getMe(token);
-      if (me && !me.error) {
-        setIsAuth(true);
-        setUser(me);
-      } else {
-        logout();
-      }
+    if (!token) return;
+
+    const me = await getMe(token);
+    if (me && !me.error) {
+      setIsAuth(true);
+      setUser(me);
+    } else {
+      logout();
     }
   }, [logout]);
 

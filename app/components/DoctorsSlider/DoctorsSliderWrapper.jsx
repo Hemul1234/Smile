@@ -6,6 +6,6 @@ const DoctorsSlider = dynamic(() => import('./DoctorsSlider'), {
   ssr: false, loading: () => <></>
 });
 
-export default function DoctorsSliderWrapper({data}) {
-  return <DoctorsSlider data={data}/>;
+export default function DoctorsSliderWrapper({doctors}) {
+  return <DoctorsSlider doctors={doctors}/>;
 }

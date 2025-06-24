@@ -3,7 +3,6 @@
 import { usePathname } from 'next/navigation';
 import { useMemo } from 'react';
 import Styles from "./Breadcrumbs.module.css";
-import { findItemBySlug } from "@/app/data/dataUtils";
 import Link from 'next/link';
 
 export const Breadcrumbs = ({doctor, service}) => {
@@ -40,7 +39,7 @@ export const Breadcrumbs = ({doctor, service}) => {
             }
             // Для услуги
             if (!name && service && segment === service.slug) {
-                name = service.name;
+                name = service.text;
             }
             if (!name) {
                 name = decodeURIComponent(segment).replace(/-/g, ' ');

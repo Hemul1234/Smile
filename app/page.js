@@ -6,26 +6,27 @@ import { ReviewsSlider } from "./components/reviewsSlider/ReviewsSlider";
 import { SignUpBunner } from "./components/SignUpBunner/SignUpBunnerComponent";
 import { Contacts } from "./components/Contacts/Contacts";
 import { CardList } from "./components/CardList/CardList";
-import { TeethFragment } from "./components/OnlineCalculation/TeethFragment";
+import { TeethMap } from "./components/OnlineCalculation/TeethFragment";
 import { SymptomsFragment } from "./components/OnlineCalculation/SymptomsFragment";
-import { getServicesByCategory, getAllDoctors, getAllSymptoms } from "./api/api-utils";
+import { getServicesByCategory, getAllDoctors, getAllSymptoms, getDoctorBySlug } from "./api/api-utils";
 
 export default async function Home() {
   const services = await getServicesByCategory('promo');
   const doctors = await getAllDoctors();
+  const doctorForFirst = await getDoctorBySlug('aleksej-ivanovich-smirnov');
   const symptoms = await getAllSymptoms();
   return (
     <main>
-        <FirstBlock title="Проверьте здоровье"/>
+        <FirstBlock title="Проверьте здоровье" doctor={doctorForFirst}/>
         <Section id="services" title="Услуги">
           <CardList variant={'services'} data={services} />
         </Section>
         <Section id="doctors" title="Врачи">
-          <DoctorsSliderWrapper data={doctors}/>
+          <DoctorsSliderWrapper doctors={doctors}/>
         </Section>
         <Section align="center" title="Онлайн расчет стоимости лечения зубов">
           <OnlineCalculation>
-            <TeethFragment />
+            <TeethMap />
             <SymptomsFragment items={symptoms} />
           </OnlineCalculation>
         </Section>

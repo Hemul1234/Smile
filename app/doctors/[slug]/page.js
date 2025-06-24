@@ -1,5 +1,5 @@
 import { Section } from "@/app/components/Section/Section";
-import {  DoctorCard } from "@/app/components/DoctorCard/DoctorCard";
+import { DoctorCard } from "@/app/components/DoctorCard/DoctorCard";
 import { Breadcrumbs } from "@/app/components/Breadcrumbs/Breadcrumbs";
 import { BookingForm } from "@/app/components/BookingForm/BookingForm"
 import { ReviewsSlider } from "@/app/components/reviewsSlider/ReviewsSlider";
@@ -27,7 +27,7 @@ export default async function Doctor({params}) {
 
   return (
     <main>
-        <Section id="doctor">
+        <Section style={{ marginTop: 0 }} id="doctor">
           <Breadcrumbs doctor={doctor}/>
           <DoctorCard doctor={doctor} />
         </Section>

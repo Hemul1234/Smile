@@ -6,15 +6,17 @@ import Styles from "./DoctorsSlider.module.css";
 
 import { ResponsiveSlider } from '../Slider/ResponsiveSlider';
 import { CardList } from '../CardList/CardList';
+import { getDoctorImage } from '@/app/api/api-utils';
 
-export default function DoctorsSlider({data}) {
-  const doctors = data;
+export default function DoctorsSlider({ doctors }) {
   const isDesktop = useMediaQuery({ minWidth: 992 });
 
   return isDesktop ? (
     <>
       <CardList data={doctors.slice(0, 5)} variant="doctorsDesktop" />
-      <Link className={`button ${Styles["button-all-doctors"]}`} href={`/doctors`}>Все врачи</Link>
+      <Link className={`button ${Styles["button-all-doctors"]}`} href={`/doctors`}>
+        Все врачи
+      </Link>
     </>
   ) : (
     <ResponsiveSlider
@@ -28,8 +30,8 @@ export default function DoctorsSlider({data}) {
           </div>
           <img
             className={Styles["women-doc"]}
-            src={doctor.photo || "/images/women-doc.png"}
-            alt="women-doc"
+            src={doctor.photo ? getDoctorImage(doctor.photo) : "/images/women-doc.png"}
+            alt={doctor.name}
           />
         </div>
       )}

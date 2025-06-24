@@ -21,6 +21,10 @@
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
 }
 
+.bookingModal {
+  max-width: 95%;
+}
+
 .title {
   display: flex;
   justify-content: space-between;

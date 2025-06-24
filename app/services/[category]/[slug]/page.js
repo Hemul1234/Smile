@@ -7,9 +7,10 @@ import { getAllServices, getServiceBySlug } from "@/app/api/api-utils";
 export default async function Service({params}) {
 
   const { slug } = await params
+ 
   const service = await getServiceBySlug(slug);
   const services = await getAllServices();
-
+  
   if (!service) {
       return <div>Услуга не найдена</div>;
     }
@@ -17,8 +18,8 @@ export default async function Service({params}) {
   return (
     <main>
         <Section id="services-terapy" title="Услуги">
-          <Breadcrumbs />
-          <ServiceCard data={service} />
+          <Breadcrumbs service={service} />
+          <ServiceCard service={service} />
         </Section>
         <Section id="make-an-appointment" title="Запись на прием">
           <BookingForm services={services} />

@@ -15,72 +15,139 @@ const getHeaders = (token, isJson = true) => {
   return headers;
 };
 
+// Вспомогательная функция для обработки ответа
+const parseResponse = async (response) => {
+  let data;
+  try {
+    data = await response.json();
+  } catch (e) {
+    return { error: true, message: 'Невозможно прочитать ответ от сервера' };
+  }
+
+  if (!response.ok) {
+    return {
+      error: true,
+      message: data?.message || `Ошибка: ${response.status}`,
+    };
+  }
+
+  return data;
+};
+
+// GET
 export const getData = async (url, token) => {
   try {
-    const response = await fetch(url, { headers: getHeaders(token, false) });
-    if (!response.ok) throw new Error(`Ошибка получения данных: ${response.status}`);
-    const data = await response.json();
-    return normalizeDataObject(data);
+    const response = await fetch(url, {
+      headers: getHeaders(token, false),
+      credentials: token ? 'include' : 'omit',
+    });
+    const data = await parseResponse(response);
+    if (data.error) return data;
+    return normalizeDataObject(data); // если у тебя есть нормализация
   } catch (error) {
-    return { error: error.message };
+    return { error: true, message: 'Ошибка получения данных' };
   }
 };
 
+// POST
 export const postData = async (url, data, token) => {
   try {
     const response = await fetch(url, {
-      method: "POST",
+      method: 'POST',
       headers: getHeaders(token),
       body: JSON.stringify(data),
+      credentials: 'include',
     });
-    if (!response.ok) throw new Error(`Ошибка отправки данных: ${response.status}`);
-    return await response.json();
+    return await parseResponse(response);
   } catch (error) {
-    return { error: error.message };
+    return { error: true, message: 'Ошибка отправки данных' };
   }
 };
 
+// PATCH
 export const patchData = async (url, data, token) => {
   try {
     const response = await fetch(url, {
-      method: "PATCH",
+      method: 'PATCH',
       headers: getHeaders(token),
       body: JSON.stringify(data),
+      credentials: 'include',
     });
-    if (!response.ok) throw new Error(`Ошибка обновления данных: ${response.status}`);
-    return await response.json();
+    return await parseResponse(response);
   } catch (error) {
-    return { error: error.message };
+    return { error: true, message: 'Ошибка обновления данных' };
   }
 };
 
-export const patchAuthorizenData = async (url, data, token) => {
-  const headers = {
-    "Content-Type": "application/json",
-  };
-  if (token) headers["Authorization"] = `Bearer ${token}`;
-  const res = await fetch(url, {
-    method: "PATCH",
-    headers,
-    body: JSON.stringify(data),
-  });
-  const json = await res.json();
-  if (!res.ok) throw json;
-  return json;
+// PATCH c ручным заголовком Authorization
+export const patchAuthorizedData = async (url, data, token) => {
+  try {
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    const response = await fetch(url, {
+      method: 'PATCH',
+      headers,
+      body: JSON.stringify(data),
+      credentials: 'include',
+    });
+    return await parseResponse(response);
+  } catch (error) {
+    return { error: true, message: 'Ошибка авторизованного PATCH запроса' };
+  }
 };
 
+// DELETE
 export const deleteData = async (url, token) => {
   try {
     const response = await fetch(url, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: getHeaders(token, false),
+      credentials: 'include',
     });
-    if (!response.ok) throw new Error(`Ошибка удаления: ${response.status}`);
-    return await response.json();
+    return await parseResponse(response);
   } catch (error) {
-    return { error: error.message };
+    return { error: true, message: 'Ошибка удаления данных' };
   }
 };
+
+//UPLOAD DATA
+export const uploadData = async (url, formData, token) => {
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: token
+        ? { Authorization: `Bearer ${token}` }
+        : undefined,
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return {
+        error: true,
+        message: data?.message || `Ошибка: ${response.status}`,
+      };
+    }
+
+    return data;
+  } catch (error) {
+    return {
+      error: true,
+      message: 'Ошибка загрузки данных',
+    };
+  }
+};
+
+
+// --- IMAGES ---
+
+export const getDoctorImage = (filename) => `${endpoints.img.doctors}${filename}`;
+export const getServiceImage = (filename) => `${endpoints.img.services}${filename}`;
+export const getUserImage = (filename) => `${endpoints.img.users}${filename}`;
 
 // --- AUTH ---
 export const register = (data) => postData(endpoints.register, data);

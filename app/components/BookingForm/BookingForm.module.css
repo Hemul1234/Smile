@@ -95,6 +95,10 @@
         flex-direction: row;
     }
 
+    .input-group1 {
+        flex-direction: column;
+    }
+
     .sign-up-button {
         width: 50%;
     }

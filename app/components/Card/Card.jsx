@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Styles from "./Card.module.css"
+import { getDoctorImage } from "@/app/api/api-utils";
 
 export function Card ({variant, slug, category, name, photo, specialization, cost, text, isFirst}) {
     if (variant === "services") {
@@ -20,7 +21,7 @@ export function Card ({variant, slug, category, name, photo, specialization, cos
     }
     if (variant === "doctors") {
         return (
-            <li className={Styles["doctors-list-item"]} style={{ background: `#E1E7FF url(${photo}) no-repeat 120% 110% / auto 84%` }}>
+            <li className={Styles["doctors-list-item"]} style={{ background: `#E1E7FF url(${getDoctorImage(photo)}) no-repeat 120% 110% / auto 84%` }}>
                 <div className={Styles["doctors-list-item-text"]}>
                     <p className={Styles["doc-name"]}>
                         {name}
@@ -41,7 +42,7 @@ export function Card ({variant, slug, category, name, photo, specialization, cos
                     <p className={`${Styles["doctors-desktop-card-position"]} ${isFirst ? Styles["doctors-desktop-card-position-first"] : ''}`}>{specialization}</p>
                 </div>
                 <Link className={`button ${Styles["more-details"]} ${isFirst ? Styles["more-details-first"] : ''}`} href={`/doctors/${slug}`}>Подробнее</Link>
-                <img className={`${Styles["women-doc"]} ${isFirst ? Styles["women-doc-first"] : ''}`} src={photo || "/images/women-doc.png"} alt="women-doc"/>
+                <img className={`${Styles["women-doc"]} ${isFirst ? Styles["women-doc-first"] : ''}`} src={getDoctorImage(photo) || "/images/women-doc.png"} alt="women-doc"/>
             </li>
         );
     }

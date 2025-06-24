@@ -3,7 +3,7 @@
 .services-item {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: clamp(16px, 16px + 3 * var(--adaptive),19px);
     border-radius: clamp(30px, 30px + 10 * var(--adaptive), 40px);
     padding: clamp(16px, 16px + 16 * var(--adaptive), 32px);
@@ -43,7 +43,7 @@
     border-radius: calc(100vw*48/390);
     background-color: #3556D7;
     font-family: "Involve-Medium";
-    font-size: 16px;
+    font: clamp(16px, calc(16px + 4 * var(--adaptive)), 20px) / 2 "Involve-Medium";
     color: #F3F3F3 !important;
 }
 
