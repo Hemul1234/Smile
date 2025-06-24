@@ -25,31 +25,34 @@ export function BookingForm({ services = [], doctors = [] }) {
     e.preventDefault();
     setResult(null);
 
+    const doctorOk = doctors.length === 0 ? true : !!selectedDoctor;
+const serviceOk = services.length === 0 ? true : !!selectedService;
+
     if (
-      !selectedDate ||
-      !selectedTime ||
-      !selectedDoctor ||
-      !selectedService ||
-      !name ||
-      !tel ||
-      !personalData
+    !selectedDate ||
+    !selectedTime ||
+    !doctorOk ||
+    !serviceOk ||
+    !name ||
+    !tel ||
+    !personalData
     ) {
-      setResult({ success: false, message: "Пожалуйста, заполните все обязательные поля." });
-      return;
+    setResult({ success: false, message: "Пожалуйста, заполните все обязательные поля." });
+    return;
     }
 
     setLoading(true);
 
     const data = {
-      date: selectedDate,
-      time: selectedTime,
-      doctor: selectedDoctor.id,
-      service: selectedService.id,
-      name,
-      tel,
-      callback,
-      personalData,
-    };
+    fullName: name,
+    phone: tel,
+    date: selectedDate,
+    time: selectedTime,
+    doctor: selectedDoctor ? selectedDoctor.id : null,
+    service: selectedService ? selectedService.id || selectedService.text || selectedService.name : null,
+    callMe: callback,
+    personalDataConsent: personalData,
+  };
 
     const response = await createAppointment(data);
 
@@ -78,6 +81,7 @@ export function BookingForm({ services = [], doctors = [] }) {
     }
     setLoading(false);
   };
+
 
   return (
     <form className={Styles["make-an-appointment"]} onSubmit={handleSubmit}>

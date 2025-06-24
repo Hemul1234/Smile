@@ -1,19 +1,19 @@
 .make-an-appointment {
     display: flex;
     flex-direction: column;
-    gap: clamp(20px, calc(20px + 4 * var(--adaptive)), 24px);
+    gap: clamp(16px, calc(16px + 4 * var(--adaptive)), 20px);
 }
 
 .inputs {
     display: flex;
     flex-direction: column;
-    gap: clamp(20px, calc(20px + 4 * var(--adaptive)), 24px);
+    gap: clamp(16px, calc(16px + 4 * var(--adaptive)), 20px);
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
-    gap: clamp(20px, calc(20px + 4 * var(--adaptive)), 24px);
+    gap: clamp(16px, calc(16px + 4 * var(--adaptive)), 20px);
 }
 
 .checkbox-group {
