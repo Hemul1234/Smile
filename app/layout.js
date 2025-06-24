@@ -20,13 +20,13 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           <ModalProvider>
             <Header />
-            {children}
+              {children}
+            <ToastContainer />
             <Footer />
             <AuthModal />
             <BookingModal />
           </ModalProvider>
         </AuthProvider>
-        <ToastContainer />
       </body>
     </html>
   );

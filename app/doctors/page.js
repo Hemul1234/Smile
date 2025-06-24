@@ -4,7 +4,6 @@ import DoctorsPage from "../components/DoctorsSwitch/DoctorsPage.client";
 import { getAllDoctors } from "../api/api-utils";
 
 export default async function Doctors({ params }) {
-  // Получаем всех врачей для первоначальной загрузки
   const doctors = await getAllDoctors();
   if (!doctors || doctors.length === 0) {
     return <div>Врачи не найдены</div>;

@@ -2,14 +2,15 @@ import { Section } from "@/app/components/Section/Section";
 import { Breadcrumbs } from "@/app/components/Breadcrumbs/Breadcrumbs";
 import { ServiceCard } from "@/app/components/ServiceCard/ServiceCard";
 import { BookingForm } from "@/app/components/BookingForm/BookingForm"
-import { extractServiceData } from "@/app/data/dataUtils";
+import { getAllServices, getServiceBySlug } from "@/app/api/api-utils";
 
 export default async function Service({params}) {
 
   const { slug } = await params
-  const serviceData = extractServiceData(slug);
+  const service = await getServiceBySlug(slug);
+  const services = await getAllServices();
 
-  if (!serviceData) {
+  if (!service) {
       return <div>Услуга не найдена</div>;
     }
 
@@ -17,10 +18,10 @@ export default async function Service({params}) {
     <main>
         <Section id="services-terapy" title="Услуги">
           <Breadcrumbs />
-          <ServiceCard data={serviceData} />
+          <ServiceCard data={service} />
         </Section>
         <Section id="make-an-appointment" title="Запись на прием">
-          <BookingForm data={serviceData} />
+          <BookingForm services={services} />
         </Section>
     </main>
   );

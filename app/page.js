@@ -8,7 +8,7 @@ import { Contacts } from "./components/Contacts/Contacts";
 import { CardList } from "./components/CardList/CardList";
 import { TeethFragment } from "./components/OnlineCalculation/TeethFragment";
 import { SymptomsFragment } from "./components/OnlineCalculation/SymptomsFragment";
-import { getServicesByCategory, getAllDoctors,getAllSymptoms } from "./api/api-utils";
+import { getServicesByCategory, getAllDoctors, getAllSymptoms } from "./api/api-utils";
 
 export default async function Home() {
   const services = await getServicesByCategory('promo');

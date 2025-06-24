@@ -6,7 +6,7 @@ import Styles from "./Breadcrumbs.module.css";
 import { findItemBySlug } from "@/app/data/dataUtils";
 import Link from 'next/link';
 
-export const Breadcrumbs = () => {
+export const Breadcrumbs = ({doctor, service}) => {
     const pathname = usePathname();
 
     const segmentTranslations = {
@@ -31,27 +31,27 @@ export const Breadcrumbs = () => {
 
     const breadcrumbs = useMemo(() => {
         return pathSegments.map((segment, index) => {
-        const href = '/' + pathSegments.slice(0, index + 1).join('/');
+            const href = '/' + pathSegments.slice(0, index + 1).join('/');
+            let name = segmentTranslations[segment];
 
-        const translation = segmentTranslations[segment];
-        if (translation) {
+            // Для врача
+            if (!name && doctor && segment === doctor.slug) {
+                name = doctor.name;
+            }
+            // Для услуги
+            if (!name && service && segment === service.slug) {
+                name = service.name;
+            }
+            if (!name) {
+                name = decodeURIComponent(segment).replace(/-/g, ' ');
+            }
             return {
-            name: translation,
-            href,
-            isLast: index === pathSegments.length - 1,
+                name,
+                href,
+                isLast: index === pathSegments.length - 1,
             };
-        }
-
-        const found = findItemBySlug(segment);
-        const name = found ? found.name : decodeURIComponent(segment).replace(/-/g, ' ');
-
-        return {
-            name,
-            href,
-            isLast: index === pathSegments.length - 1,
-        };
         });
-    }, [pathname]);
+    }, [pathname, doctor, service]);
     
     return (
         <nav aria-label="breadcrumb">

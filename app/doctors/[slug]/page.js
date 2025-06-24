@@ -10,8 +10,17 @@ export default async function Doctor({params}) {
 
   const { slug } = await params
   const doctor = await getDoctorBySlug(slug);
-  const services = await getServicesByCategory(doctor.category);
+  const doctorToServiceCategoryMap = {
+    microscopist: ['terapy'],
+    orthodontist: ['esthetic'],
+    hygienist:    ['terapy'],
+    therapist:    ['terapy'], 
+    surgeon:      ['surgery'],
+    orthopedist:  ['prosthetics'],
+  }
 
+  const category = doctorToServiceCategoryMap[doctor.category] || [];
+  const services = await getServicesByCategory(category);
   if (!doctor) {
       return <div>Врач не найден</div>;
     }
@@ -19,14 +28,14 @@ export default async function Doctor({params}) {
   return (
     <main>
         <Section id="doctor">
-          <Breadcrumbs />
+          <Breadcrumbs doctor={doctor}/>
           <DoctorCard doctor={doctor} />
         </Section>
         <Section title="Отзывы">
           <ReviewsSlider />
         </Section>
         <Section id="make-an-appointment" title="Запись на прием">
-          <BookingForm data={services} />
+          <BookingForm services={services} />
         </Section>
     </main>
   );
